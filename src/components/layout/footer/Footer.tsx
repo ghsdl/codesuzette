@@ -4,7 +4,7 @@ import './Footer.scss';
 const Footer = () => {
   return (
     <div className="footer">
-      <header>Footer</header>
+      <header></header>
     </div>
   );
 };
