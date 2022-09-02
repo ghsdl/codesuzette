@@ -1,11 +1,13 @@
-import React from 'react';
+import LOGO from '../../../assets/LOGO.png';
+import TOP_WAVE from '../../../assets/TOP_WAVE.png';
 import './Header.scss';
 
 const Header = () => {
   return (
-    <div className="header">
-      <header></header>
-    </div>
+    <header className="header">
+      <img src={LOGO} alt="logo" className="header__logo" />
+      <img src={TOP_WAVE} alt="logo" className="header__topWave" />
+    </header>
   );
 };
 
