@@ -1,8 +1,76 @@
+@import '../../../styles/responsive.scss';
+
 .header {
   display: flex;
   width: 100vw;
+  height: 200px;
+  @include xs {
+    height: 100px;
+  }
+  @include sm {
+    height: 100px;
+  }
+  &__link {
+    display: flex;
+  }
   &__logo {
-    width: 350px;
-    margin: auto auto auto 50px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto auto 100px;
+    @include sm {
+      width: 175px;
+      margin: auto auto auto 50px;
+    }
+  }
+  &__wave {
+    background-image: url('../../../assets/TOP_WAVE.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    justify-items: flex-end;
+    margin: auto 0 auto auto;
+    display: flex;
+    align-items: center;
+    @include xs {
+      background-image: none;
+    }
+    @include sm {
+      background-image: none;
+    }
+    @include md {
+      background-image: none;
+    }
+  }
+  &__navMenu {
+    margin: auto 100px auto auto;
+    @include xs {
+      display: none;
+    }
+    @include sm {
+      display: none;
+    }
+    @include md {
+      display: none;
+    }
+  }
+  &__navResponsive {
+    display: none;
+  }
+  &__navIcon {
+    display: none;
+    @include xs {
+      display: block;
+      margin: auto 50px auto auto;
+    }
+    @include sm {
+      display: block;
+      margin: auto 50px auto auto;
+    }
+    @include md {
+      display: block;
+      margin: auto 50px auto auto;
+    }
   }
 }

@@ -1,0 +1,17 @@
+@import '../../../styles/responsive.scss';
+
+.navIcon {
+  position: relative;
+  display: flex;
+  width: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+  &__icon {
+    font-size: 2rem;
+    margin: auto;
+    @include sm {
+      font-size: 1.5rem;
+    }
+  }
+}
