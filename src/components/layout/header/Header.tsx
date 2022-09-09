@@ -13,9 +13,7 @@ const Header = () => {
       <Link to="/" className="header__link">
         <img src={LOGO} alt="logo" className="header__logo" />
       </Link>
-      <div className="header__wave">
-        <NavMenu className="header__navMenu" />
-      </div>
+      <NavMenu className="header__navMenu" />
       <NavResponsive className="header__navResponsive" />
       <NavIcon
         isNavOpen={isNavOpen}

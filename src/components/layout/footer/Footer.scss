@@ -1,2 +1,22 @@
+@import '../../../styles/styles.scss';
+@import '../../../styles/responsive.scss';
+
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100px;
+  background-color: $purple;
+  &__paragraph {
+    margin: 10px 100px 10px 100px;
+    @include xs {
+      margin: 10px 20px 10px 20px;
+      width: 50%;
+    }
+    @include sm {
+      margin: 10px 20px 10px 20px;
+      width: 50%;
+    }
+  }
 }

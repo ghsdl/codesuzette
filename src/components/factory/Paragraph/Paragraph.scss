@@ -1,5 +1,21 @@
+@import '../../../styles/styles.scss';
+@import '../../../styles/responsive.scss';
+
 .paragraph {
-  align-items: center;
   display: flex;
+  align-items: center;
+  color: $purple;
   font-size: 1rem;
+  @include xs {
+    font-size: 0.8rem;
+  }
+  @include sm {
+    font-size: 0.8rem;
+  }
+  &--purple {
+    color: $purple;
+  }
+  &--white {
+    color: $white;
+  }
 }

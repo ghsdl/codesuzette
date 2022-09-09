@@ -1,15 +1,11 @@
+@import '../../../styles/styles.scss';
 @import '../../../styles/responsive.scss';
 
 .header {
   display: flex;
   width: 100vw;
-  height: 200px;
-  @include xs {
-    height: 100px;
-  }
-  @include sm {
-    height: 100px;
-  }
+  height: 100px;
+  background-color: $white;
   &__link {
     display: flex;
   }
@@ -21,26 +17,6 @@
     @include sm {
       width: 175px;
       margin: auto auto auto 50px;
-    }
-  }
-  &__wave {
-    background-image: url('../../../assets/TOP_WAVE.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    justify-items: flex-end;
-    margin: auto 0 auto auto;
-    display: flex;
-    align-items: center;
-    @include xs {
-      background-image: none;
-    }
-    @include sm {
-      background-image: none;
-    }
-    @include md {
-      background-image: none;
     }
   }
   &__navMenu {

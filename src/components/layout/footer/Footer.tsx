@@ -1,11 +1,16 @@
-import React from 'react';
 import './Footer.scss';
+import Paragraph from '../.././factory/Paragraph/Paragraph';
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <header></header>
-    </div>
+    <footer className="footer">
+      <Paragraph className="footer__paragraph paragraph--white">
+        {`© Code Suzette ${new Date().getFullYear()}`}
+      </Paragraph>
+      <Paragraph className="footer__paragraph paragraph--white">
+        {` Created with TypeScrit, React et Directus by Maeva`}
+      </Paragraph>
+    </footer>
   );
 };
 
