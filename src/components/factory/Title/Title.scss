@@ -1,0 +1,13 @@
+@import '../../../styles/styles.scss';
+@import '../../../styles/responsive.scss';
+
+.title {
+  display: flex;
+  align-items: center;
+  color: $purple;
+  font-size: 4rem;
+  font-family: 'Chubbo', sans-serif;
+  &--yellow {
+    color: $yellow;
+  }
+}

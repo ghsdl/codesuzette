@@ -12,17 +12,19 @@ const NavMenu = ({ className }: NavMenuProps) => {
   return (
     <nav className={`navMenu ${className}`}>
       {menus.map((menu, index) => (
-        <div key={index} className="navMenu__container">
-          <NavLink to={menu.to} className="navMenu__link">
-            {menu.label}
-            {menu.icon && (
-              <Icon icon={<HiChevronDown />} className="navMenu__icon" />
-            )}
-          </NavLink>
+        <ul key={index} className="navMenu__container">
+          <li>
+            <NavLink to={menu.to} className="navMenu__link">
+              {menu.label}
+              {menu.icon && (
+                <Icon icon={<HiChevronDown />} className="navMenu__icon" />
+              )}
+            </NavLink>
+          </li>
           {menu && menu.submenus && (
-            <div className="navMenu__submenusContainer">
+            <ul className="navMenu__submenusContainer">
               {menu.submenus.map((submenu, index) => (
-                <div key={index} className="navMenu__submenuContainer">
+                <li key={index} className="navMenu__submenuContainer">
                   <NavLink to={submenu.to} className="navMenu__submenu">
                     {submenu.icon && (
                       <Icon
@@ -32,11 +34,11 @@ const NavMenu = ({ className }: NavMenuProps) => {
                     )}
                     {submenu.label}
                   </NavLink>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
-        </div>
+        </ul>
       ))}
     </nav>
   );

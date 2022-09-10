@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Paragraph className="footer__paragraph paragraph--white">
-        {`© Code Suzette ${new Date().getFullYear()}`}
+        {`© Code Suzette - ${new Date().getFullYear()}`}
       </Paragraph>
       <Paragraph className="footer__paragraph paragraph--white">
-        {` Created with TypeScrit, React et Directus by Maeva`}
+        Created with TypeScrit, React and Directus by Maeva
       </Paragraph>
     </footer>
   );

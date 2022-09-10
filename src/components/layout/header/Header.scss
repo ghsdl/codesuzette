@@ -4,23 +4,31 @@
 .header {
   display: flex;
   width: 100vw;
-  height: 100px;
+  padding: 2rem 0;
   background-color: $white;
   &__link {
     display: flex;
   }
   &__logo {
-    width: 300px;
+    width: 60px;
     justify-content: center;
     align-items: center;
-    margin: auto auto auto 100px;
+    margin: auto auto auto 200px;
     @include sm {
-      width: 175px;
+      width: 40px;
       margin: auto auto auto 50px;
     }
   }
+  &__paragraph {
+    font-size: 3rem;
+    margin: 0 0 0 15px;
+    font-family: 'Chubbo', sans-serif;
+    @include sm {
+      font-size: 1.5rem;
+    }
+  }
   &__navMenu {
-    margin: auto 100px auto auto;
+    margin: auto 200px auto auto;
     @include xs {
       display: none;
     }

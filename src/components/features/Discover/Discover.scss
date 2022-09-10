@@ -1,0 +1,106 @@
+@import '../../../styles/styles.scss';
+@import '../../../styles/responsive.scss';
+
+.discover {
+  display: flex;
+  @include xs {
+    flex-direction: column;
+    height: calc(100vh - 200px);
+  }
+  @include sm {
+    flex-direction: column;
+    height: calc(100vh - 200px);
+  }
+  @include md {
+    flex-direction: column;
+    height: calc(100vh - 200px);
+  }
+  &--left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    @include xs {
+      margin-bottom: 2rem;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    @include sm {
+      margin-bottom: 2rem;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    @include md {
+      margin-bottom: 2rem;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    &__title {
+      line-height: 4.5rem;
+      @include xs {
+        font-size: 2rem;
+      }
+      @include sm {
+        font-size: 2rem;
+      }
+      @include md {
+        font-size: 2rem;
+      }
+    }
+    &__intro {
+      color: $light-purple;
+      font-size: 1.7rem;
+      line-height: 30px;
+      letter-spacing: 1px;
+      margin: 2rem 0 4rem 0;
+      font-weight: $bolder;
+      @include xs {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      @include sm {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      @include md {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+    &__scrollDown {
+      display: flex;
+      &__paragraph {
+        font-weight: $bolder;
+        font-size: 1.4rem;
+        margin: 0 15px 0 0;
+      }
+    }
+  }
+  &--right {
+    position: relative;
+    left: 90px;
+    margin-top: 9rem;
+    z-index: -1;
+    @include xs {
+      margin-top: 2rem;
+      width: 100%;
+      position: static;
+    }
+    @include sm {
+      margin-top: 2rem;
+      width: 100%;
+      position: static;
+    }
+    @include md {
+      margin-top: 2rem;
+      width: 100%;
+      position: static;
+    }
+    &__picture {
+      width: 100%;
+    }
+  }
+}

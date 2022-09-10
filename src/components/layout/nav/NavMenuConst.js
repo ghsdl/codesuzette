@@ -2,10 +2,10 @@ import {
   BsLaptop,
   BsClipboardCheck,
   BsBook,
-  BsCameraVideo
+  BsCameraVideo,
+  BsController,
+  BsClockHistory
 } from 'react-icons/bs';
-import { BiGame } from 'react-icons/bi';
-import { GiSandsOfTime } from 'react-icons/gi';
 
 export const menus = [
   {
@@ -34,12 +34,12 @@ export const menus = [
         to: '/videos'
       },
       {
-        icon: <BiGame />,
+        icon: <BsController />,
         label: 'Jeux',
         to: '/games'
       },
       {
-        icon: <GiSandsOfTime />,
+        icon: <BsClockHistory />,
         label: 'Challenges',
         to: '/challenges'
       }
