@@ -1,7 +1,7 @@
 import Title from '../../factory/Title/Title';
 import Paragraph from '../../factory/Paragraph/Paragraph';
 import AnimatedIcon from '../../factory/AnimatedIcon/AnimatedIcon';
-import scrollDown from '../../../assets/icons/scrollDown.json';
+import scrollDown from '../../../assets/animations/scrollDown.json';
 import Picture from '../../factory/Picture/Picture';
 import HOMEPAGE_ILLUSTRATION from '../../../assets/images/HOMEPAGE_ILLUSTRATION.svg';
 import './Discover.scss';

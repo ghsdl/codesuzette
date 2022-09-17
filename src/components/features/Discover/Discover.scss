@@ -3,37 +3,45 @@
 
 .discover {
   display: flex;
+  height: calc(100vh - 150px);
+  width: 100%;
   @include xs {
+    padding: 0.5rem;
     flex-direction: column;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 150px);
   }
   @include sm {
+    padding: 0.5rem;
     flex-direction: column;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 150px);
   }
   @include md {
+  padding: 0.5rem;
     flex-direction: column;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 150px);
   }
   &--left {
     width: 40%;
     display: flex;
     flex-direction: column;
-    margin-top: 4rem;
+    margin-top: 8rem;
     @include xs {
-      margin-bottom: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
       width: 100%;
       align-items: center;
       justify-content: center;
     }
     @include sm {
-      margin-bottom: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
       width: 100%;
       align-items: center;
       justify-content: center;
     }
     @include md {
-      margin-bottom: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
       width: 100%;
       align-items: center;
       justify-content: center;
@@ -55,23 +63,28 @@
       font-size: 1.7rem;
       line-height: 30px;
       letter-spacing: 1px;
-      margin: 2rem 0 4rem 0;
+      margin: 4rem 0 6rem 0;
       font-weight: $bolder;
+      font-family: 'Supreme', sans-serif;
       @include xs {
         font-size: 1.5rem;
         text-align: center;
+        margin: 2rem 0 4rem 0;
       }
       @include sm {
         font-size: 1.5rem;
         text-align: center;
+        margin: 2rem 0 4rem 0;
       }
       @include md {
         font-size: 1.5rem;
         text-align: center;
+        margin: 2rem 0 4rem 0;
       }
     }
     &__scrollDown {
       display: flex;
+      z-index: -1;
       &__paragraph {
         font-weight: $bolder;
         font-size: 1.4rem;
@@ -81,8 +94,8 @@
   }
   &--right {
     position: relative;
-    left: 90px;
-    margin-top: 9rem;
+    left: 75px;
+    margin-top: 15rem;
     z-index: -1;
     @include xs {
       margin-top: 2rem;

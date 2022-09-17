@@ -12,13 +12,13 @@
     flex-grow: 1;
     margin: auto 200px;
     @include xs {
-      margin: auto 50px;
+      margin: 0 0.625rem;
     }
     @include sm {
-      margin: auto 50px;
+      margin: 0 0.625rem;
     }
     @include md {
-      margin: auto 50px;
+      margin: 0 0.625rem;
     }
   }
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap');
+
 @font-face {
   font-family: 'Supreme';
   src: url('../assets/fonts/Supreme-Regular.woff2') format('woff2'),
@@ -19,7 +21,7 @@
 }
 
 * {
-  font-family: 'Supreme', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 $white: #ffffff;
@@ -31,7 +33,10 @@ $light-red: #e07d7d;
 $light-orange: #ffae70;
 $light-blue: #97d1f5;
 
-$bold: 600;
-$bolder: 800;
+$light: 300;
+$medium: 400;
+$bold: 500;
+$bolder: 600;
 
 $box-shadow: rgba(58, 39, 63, 0.2) 0px 20px 30px;
+$box-shadow-category-card: 0 4px 18px 0 rgba(58, 39, 63, 0.1);

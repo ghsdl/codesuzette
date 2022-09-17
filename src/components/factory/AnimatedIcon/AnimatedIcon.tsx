@@ -2,29 +2,34 @@ import Lottie from 'react-lottie';
 
 interface AnimatedIconProps {
   options: {
-    loop?: boolean;
+    loop?: boolean | number;
     autoplay?: boolean;
     animationData: object;
     rendererSettings?: {
       preserveAspectRatio: string;
     };
   };
+  isStopped?: boolean;
   width?: number;
   height?: number;
-  style?: object;
   className?: string;
 }
 
 const AnimatedIcon = ({
+  isStopped,
   options,
-  style,
   width,
   height,
   className
 }: AnimatedIconProps) => {
   return (
     <div className={className}>
-      <Lottie options={options} height={height} width={width} style={style} />
+      <Lottie
+        isStopped={isStopped}
+        options={options}
+        height={height}
+        width={width}
+      />
     </div>
   );
 };
