@@ -23,7 +23,7 @@ const Header = () => {
         setIsNavOpen={setIsNavOpen}
         className="header__navIcon"
       />
-      {isNavOpen && <NavResponsive className="header__responsive" />}
+      {isNavOpen && <NavResponsive />}
     </header>
   );
 };

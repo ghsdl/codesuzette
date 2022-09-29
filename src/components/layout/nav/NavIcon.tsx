@@ -2,17 +2,13 @@ import './NavIcon.scss';
 import Icon from '../../factory/Icon/Icon';
 import { RiMenu5Fill, RiCloseFill } from 'react-icons/ri';
 
-interface NavResponsiveProps {
+interface NavIconProps {
   isNavOpen: boolean;
   setIsNavOpen: (open: boolean) => void;
   className?: string;
 }
 
-const NavIcon = ({
-  className,
-  isNavOpen,
-  setIsNavOpen
-}: NavResponsiveProps) => {
+const NavIcon = ({ className, isNavOpen, setIsNavOpen }: NavIconProps) => {
   return (
     <nav
       className={`navIcon ${className}`}
