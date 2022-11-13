@@ -3,49 +3,15 @@
 
 .explore {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  z-index: -1;
+  max-width: 1400px;
   margin-bottom: 5rem;
-  @include xs {
-    padding: 0.5rem;
-  }
-
-  @include sm {
-    padding: 0.5rem;
-  }
-
-  @include md {
-    padding: 0.5rem;
-  }
   &__header {
-    width: 100%;
     display: flex;
-    margin-bottom: 7rem;
-    @include xs {
-      flex-direction: column;
-      margin-bottom: 3rem;
-    }
-    @include sm {
-      flex-direction: column;
-      margin-bottom: 3rem;
-    }
-    @include md {
-      flex-direction: column;
-      margin-bottom: 3rem;
-    }
-    &__explore {
+    margin-bottom: 5rem;
+    &__title {
       font-size: 2rem;
       color: $purple;
-      @include xs {
-        margin-bottom: 1rem;
-      }
-      @include sm {
-        margin-bottom: 1rem;
-      }
-      @include md {
-        margin-bottom: 1rem;
-      }
     }
     &__details {
       font-size: 1.2rem;
@@ -56,19 +22,6 @@
   &__categoryCards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    width: 100%;
-    @include xs {
-      display: flex;
-      flex-direction: column;
-    }
-    @include sm {
-      display: flex;
-      flex-direction: column;
-    }
-    @include md {
-      display: flex;
-      flex-direction: column;
-    }
+    gap: 1.5rem;
   }
 }

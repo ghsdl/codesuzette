@@ -5,20 +5,13 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding: 3rem 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
   &__content {
     align-items: center;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin: auto 200px;
-    @include xs {
-      margin: 0 0.625rem;
-    }
-    @include sm {
-      margin: 0 0.625rem;
-    }
-    @include md {
-      margin: 0 0.625rem;
-    }
   }
 }

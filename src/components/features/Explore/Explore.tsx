@@ -1,7 +1,7 @@
 import Subtitle from '../../factory/Subtitle/Subtitle';
 import Paragraph from '../../factory/Paragraph/Paragraph';
 import CategoryCard from '../../factory/CategoryCard/CategoryCard';
-import { CATEGORIES_CONST } from './ExploreUtils.js';
+import { CATEGORIES } from './ExploreConst.js';
 import websites from '../../../assets/animations/websites.json';
 import courses from '../../../assets/animations/courses.json';
 import videos from '../../../assets/animations/videos.json';
@@ -22,7 +22,7 @@ const Explore = () => {
   return (
     <div className="explore">
       <div className="explore__header">
-        <Subtitle className="explore__header__explore">
+        <Subtitle className="explore__header__title">
           Explorez les ressources
         </Subtitle>
         <Paragraph className="explore__header__details">
@@ -35,7 +35,7 @@ const Explore = () => {
             <CategoryCard
               key={index}
               label={
-                CATEGORIES_CONST.find((CAT) => {
+                CATEGORIES.find((CAT) => {
                   return category?.name === CAT?.value;
                 })?.label
               }

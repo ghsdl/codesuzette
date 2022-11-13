@@ -10,8 +10,5 @@
   &__icon {
     font-size: 2rem;
     margin: auto;
-    @include sm {
-      font-size: 1.5rem;
-    }
   }
 }

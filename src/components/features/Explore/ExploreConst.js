@@ -1,4 +1,4 @@
-export const CATEGORIES_CONST = [
+export const CATEGORIES = [
   {
     value: 'websites',
     label: 'Sites Web'

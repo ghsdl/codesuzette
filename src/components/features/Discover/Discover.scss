@@ -3,117 +3,47 @@
 
 .discover {
   display: flex;
-  height: calc(100vh - 150px);
-  width: 100%;
-  @include xs {
-    padding: 0.5rem;
-    flex-direction: column;
-    height: calc(100vh - 150px);
-  }
-  @include sm {
-    padding: 0.5rem;
-    flex-direction: column;
-    height: calc(100vh - 150px);
-  }
-  @include md {
-  padding: 0.5rem;
-    flex-direction: column;
-    height: calc(100vh - 150px);
-  }
+  max-width: 1400px;
+  height: calc(100vh - 115px);
   &--left {
-    width: 40%;
     display: flex;
     flex-direction: column;
-    margin-top: 8rem;
-    @include xs {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
+    justify-content: space-around;
+    width: 40%;
+    &__titleContainer {
       width: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-    @include sm {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-    @include md {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-    &__title {
-      line-height: 4.5rem;
-      @include xs {
-        font-size: 2rem;
+      &__title {
+        font-size: 2.3rem;
+        line-height: 1.5;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
       }
-      @include sm {
-        font-size: 2rem;
-      }
-      @include md {
-        font-size: 2rem;
-      }
-    }
-    &__intro {
-      color: $light-purple;
-      font-size: 1.7rem;
-      line-height: 30px;
-      letter-spacing: 1px;
-      margin: 4rem 0 6rem 0;
-      font-weight: $bolder;
-      font-family: 'Supreme', sans-serif;
-      @include xs {
-        font-size: 1.5rem;
-        text-align: center;
-        margin: 2rem 0 4rem 0;
-      }
-      @include sm {
-        font-size: 1.5rem;
-        text-align: center;
-        margin: 2rem 0 4rem 0;
-      }
-      @include md {
-        font-size: 1.5rem;
-        text-align: center;
-        margin: 2rem 0 4rem 0;
+      &__intro {
+        font-family: 'Supreme', sans-serif;
+        font-size: 1.2rem;
+        color: $purple;
+        line-height: 1.5;
+        letter-spacing: 0.05rem;
+        margin-bottom: 3rem;
       }
     }
     &__scrollDown {
       display: flex;
-      z-index: -1;
       &__paragraph {
         font-weight: $bolder;
-        font-size: 1.4rem;
-        margin: 0 15px 0 0;
+        margin-right: 2rem;
+        font-size: 1.3rem;
       }
     }
   }
   &--right {
-    position: relative;
-    left: 75px;
-    margin-top: 15rem;
-    z-index: -1;
-    @include xs {
-      margin-top: 2rem;
-      width: 100%;
-      position: static;
-    }
-    @include sm {
-      margin-top: 2rem;
-      width: 100%;
-      position: static;
-    }
-    @include md {
-      margin-top: 2rem;
-      width: 100%;
-      position: static;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
     &__picture {
       width: 100%;
+      margin-left: 5rem;
     }
   }
 }

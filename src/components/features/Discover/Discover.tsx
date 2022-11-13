@@ -10,36 +10,42 @@ const Discover = () => {
   return (
     <div className="discover">
       <div className="discover--left">
-        <Title className="discover--left__title title--yellow">
-          Code Suzette
-        </Title>
-        <Paragraph className="discover--left__intro">
-          Un condensé de ressources sur le développement web
-        </Paragraph>
-        <div className="discover--left__scrollDown">
-          <Paragraph className="discover--left__scrollDown__paragraph paragraph--green">
-            Découvrir
+        <div className="discover--left__titleContainer">
+          <Title className="discover--left__titleContainer__title title--lightPurlple">
+            Un condensé de ressources sur le développement web
+          </Title>
+          <Paragraph className="discover--left__titleContainer__intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            condimentum, nisl ut aliquam lacinia, nunc nisl aliquet nisl, quis
+            aliquam nunc nisl sit amet nunc.
           </Paragraph>
-          <AnimatedIcon
-            width={30}
-            height={30}
-            options={{
-              loop: true,
-              autoplay: true,
-              animationData: scrollDown,
-              rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice'
-              }
-            }}
-          />
+          <div className="discover--left__scrollDown">
+            <Paragraph className="discover--left__scrollDown__paragraph paragraph--green">
+              Découvrir
+            </Paragraph>
+            <AnimatedIcon
+              width={30}
+              height={30}
+              options={{
+                loop: true,
+                autoplay: true,
+                animationData: scrollDown,
+                rendererSettings: {
+                  preserveAspectRatio: 'xMidYMid slice'
+                }
+              }}
+            />
+          </div>
         </div>
       </div>
       <div className="discover--right">
-        <Picture
-          src={HOMEPAGE_ILLUSTRATION}
-          alt="illustration"
-          className="discover--right__picture"
-        />
+        <div className="discover--left__titleContainer">
+          <Picture
+            src={HOMEPAGE_ILLUSTRATION}
+            alt="illustration"
+            className="discover--right__picture"
+          />
+        </div>
       </div>
     </div>
   );

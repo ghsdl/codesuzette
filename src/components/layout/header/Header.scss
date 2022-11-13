@@ -3,58 +3,24 @@
 
 .header {
   display: flex;
-  width: 100vw;
-  height: 150px;
-  background-color: $white;
   &__link {
     display: flex;
+    flex: 1 1 0px;
   }
   &__logo {
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    margin: auto auto auto 200px;
-    @include sm {
-      width: 40px;
-      margin: auto auto auto 50px;
-    }
+    width: 250px;
+  }
+  &__navMenu {
   }
   &__paragraph {
     font-size: 3rem;
     margin: 0 0 0 15px;
     font-family: 'Chubbo', sans-serif;
-    @include sm {
-      font-size: 1.5rem;
-    }
-  }
-  &__navMenu {
-    margin: auto 200px auto auto;
-    @include xs {
-      display: none;
-    }
-    @include sm {
-      display: none;
-    }
-    @include md {
-      display: none;
-    }
   }
   &__navResponsive {
     display: none;
   }
   &__navIcon {
     display: none;
-    @include xs {
-      display: block;
-      margin: auto 50px auto auto;
-    }
-    @include sm {
-      display: block;
-      margin: auto 50px auto auto;
-    }
-    @include md {
-      display: block;
-      margin: auto 50px auto auto;
-    }
   }
 }

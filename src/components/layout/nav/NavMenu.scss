@@ -3,23 +3,26 @@
 
 .navMenu {
   display: flex;
+  align-items: center;
+  z-index: 1;
   &__container {
     position: relative;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   &__link {
     display: flex;
+    align-items: center;
     color: $purple;
     font-size: 1.2rem;
-    margin: 0 0 0 50px;
-    padding: 20px 0;
+    margin: 0 0 0 3rem;
+    padding: 1.5rem 0;
   }
   &__icon {
     width: 25px;
     height: 25px;
-    color: lighten($purple, 50%);
+    color: $light-purple;
     margin: 0 0 0 5px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   &__submenusContainer {
     position: absolute;
@@ -28,13 +31,14 @@
     flex-direction: column;
     border-radius: 5px;
     top: 60px;
-    left: -20px;
+    left: -25px;
     min-width: 220px;
     box-shadow: $box-shadow;
   }
   &__submenuContainer {
     border-left: 5px solid $white;
     padding: 15px 25px;
+    cursor: pointer;
     &:hover {
       background-color: lighten($purple, 70%);
       font-weight: 800;
@@ -42,8 +46,8 @@
     }
   }
   &__submenuContainer:first-of-type {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
   &__submenuContainer:last-of-type {
     border-bottom-left-radius: 5px;
@@ -55,7 +59,7 @@
     line-height: 1.5em;
     letter-spacing: 0.5px;
     &:hover {
-      border-top-right-radius: 3px;
+      border-top-right-radius: 5px;
       background-color: lighten($purple, 70%);
     }
     &__icon {
@@ -71,5 +75,5 @@
 
 .navMenu__container:hover .navMenu__icon {
   rotate: 180deg;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
