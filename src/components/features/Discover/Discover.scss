@@ -5,18 +5,38 @@
   display: flex;
   max-width: 1400px;
   height: calc(100vh - 115px);
+  margin-bottom: 3rem;
+  @include sm {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+  @include md {
+    height: auto;
+    flex-direction: column-reverse;
+  }
   &--left {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 40%;
+    @include sm {
+      margin: 3rem auto 3rem auto;
+      width: 100%;
+    }
+    @include md {
+      margin: 3rem auto 3rem auto;
+      width: 100%;
+    }
     &__titleContainer {
       width: 100%;
       &__title {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
         line-height: 1.5;
         font-weight: 600;
         letter-spacing: 0.05rem;
+        @include sm {
+          font-size: 1.6rem;
+        }
       }
       &__intro {
         font-family: 'Supreme', sans-serif;
@@ -25,6 +45,9 @@
         line-height: 1.5;
         letter-spacing: 0.05rem;
         margin-bottom: 3rem;
+        @include sm {
+          font-size: 1rem;
+        }
       }
     }
     &__scrollDown {
@@ -41,9 +64,26 @@
     flex-direction: column;
     justify-content: space-around;
     width: 60%;
+    @include sm {
+      display: block;
+      width: 100%;
+    }
+    @include md {
+      display: block;
+      width: 100%;
+    }
+    &__pictureContainer {
+      margin: 5rem auto 3rem auto;
+    }
     &__picture {
       width: 100%;
       margin-left: 5rem;
+      @include sm {
+        margin-left: auto;
+      }
+      @include md {
+        margin-left: auto;
+      }
     }
   }
 }

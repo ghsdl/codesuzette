@@ -1,12 +1,10 @@
+@import '../../../styles/styles.scss';
 @import '../../../styles/responsive.scss';
 
 .navIcon {
   position: relative;
   display: flex;
-  width: 50px;
-  &:hover {
-    cursor: pointer;
-  }
+  width: 30px;
   &__icon {
     font-size: 2rem;
     margin: auto;

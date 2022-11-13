@@ -15,13 +15,12 @@ const Header = () => {
         <Picture src={LOGO} alt="logo" className="header__logo" />
       </Link>
       <NavMenu className="header__navMenu" />
-      <NavResponsive className="header__navResponsive" />
+      <NavResponsive isNavOpen={isNavOpen} />
       <NavIcon
         isNavOpen={isNavOpen}
         setIsNavOpen={setIsNavOpen}
         className="header__navIcon"
       />
-      {isNavOpen && <NavResponsive />}
     </header>
   );
 };

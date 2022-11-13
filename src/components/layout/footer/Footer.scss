@@ -2,11 +2,7 @@
 @import '../../../styles/responsive.scss';
 
 .footer {
-  border: 1px solid red;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: $white;
   &__paragraph {
     margin: 0 auto;
   }

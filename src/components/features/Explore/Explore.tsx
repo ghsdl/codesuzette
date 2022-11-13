@@ -22,9 +22,7 @@ const Explore = () => {
   return (
     <div className="explore">
       <div className="explore__header">
-        <Subtitle className="explore__header__title">
-          Explorez les ressources
-        </Subtitle>
+        <Subtitle>Explorez les ressources</Subtitle>
         <Paragraph className="explore__header__details">
           6 catégories - 5 languages - 117 ressources
         </Paragraph>

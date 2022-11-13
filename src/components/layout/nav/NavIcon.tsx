@@ -8,7 +8,7 @@ interface NavIconProps {
   className?: string;
 }
 
-const NavIcon = ({ className, isNavOpen, setIsNavOpen }: NavIconProps) => {
+const NavIcon = ({ isNavOpen, setIsNavOpen, className }: NavIconProps) => {
   return (
     <nav
       className={`navIcon ${className}`}
