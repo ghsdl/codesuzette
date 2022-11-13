@@ -39,7 +39,7 @@ const Discover = () => {
         </div>
       </div>
       <div className="discover--right">
-        <div className="discover--left__titleContainer">
+        <div className="discover--right__pictureContainer">
           <Picture
             src={HOMEPAGE_ILLUSTRATION}
             alt="illustration"

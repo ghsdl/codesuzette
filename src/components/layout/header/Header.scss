@@ -3,24 +3,26 @@
 
 .header {
   display: flex;
+  transition: all 0.3s ease-in-out;
   &__link {
     display: flex;
     flex: 1 1 0px;
   }
   &__logo {
     width: 250px;
+    @include sm {
+      width: 200px;
+    }
   }
   &__navMenu {
-  }
-  &__paragraph {
-    font-size: 3rem;
-    margin: 0 0 0 15px;
-    font-family: 'Chubbo', sans-serif;
-  }
-  &__navResponsive {
-    display: none;
+    @include sm {
+      display: none;
+    }
   }
   &__navIcon {
     display: none;
+    @include sm {
+      display: block;
+    }
   }
 }

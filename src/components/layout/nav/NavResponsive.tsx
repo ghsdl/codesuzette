@@ -4,12 +4,17 @@ import Icon from '../../factory/Icon/Icon';
 import './NavResponsive.scss';
 
 interface NavResponsiveProps {
+  isNavOpen: boolean;
   className?: string;
 }
 
-const NavResponsive = ({ className }: NavResponsiveProps) => {
+const NavResponsive = ({ isNavOpen, className }: NavResponsiveProps) => {
   return (
-    <nav className={`navResponsive ${className}`}>
+    <nav
+      className={
+        isNavOpen ? 'navResponsive--isOpened' : `navResponsive ${className}`
+      }
+    >
       {menus.map((menu, index) => (
         <div key={index} className="navResponsive__container">
           <NavLink to={menu.to} className="navResponsive__link">

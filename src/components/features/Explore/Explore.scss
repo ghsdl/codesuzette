@@ -6,12 +6,15 @@
   flex-direction: column;
   max-width: 1400px;
   margin-bottom: 5rem;
+  @include sm {
+    margin-bottom: 2.5rem;
+  }
   &__header {
     display: flex;
     margin-bottom: 5rem;
-    &__title {
-      font-size: 2rem;
-      color: $purple;
+    @include sm {
+      flex-direction: column;
+      margin-bottom: 3rem;
     }
     &__details {
       font-size: 1.2rem;
@@ -23,5 +26,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    @include sm {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
