@@ -1,27 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap');
-
-@font-face {
-  font-family: 'Supreme';
-  src: url('../assets/fonts/Supreme-Regular.woff2') format('woff2'),
-    url('../assets/fonts/Supreme-Regular.woff') format('woff'),
-    url('../assets/fonts/Supreme-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Chubbo';
-  src: url('../assets/fonts/Chubbo-Bold.woff2') format('woff2'),
-    url('../assets/fonts/Chubbo-Bold.woff') format('woff'),
-    url('../assets/fonts/Chubbo-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@800&display=swap');
 
 * {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 $white: #ffffff;
@@ -34,10 +15,11 @@ $orange: #ffae70;
 $light-orange: #fff3ed;
 $light-blue: #97d1f5;
 
-$light: 300;
-$medium: 400;
-$bold: 500;
-$bolder: 600;
+$bold: 600;
+$bolder: 800;
 
-$box-shadow: rgba(58, 39, 63, 0.2) 0px 20px 30px;
-$box-shadow-category-card: 0 4px 18px 0 rgba(58, 39, 63, 0.1);
+$box-shadow: rgba(58, 39, 63, 0.2) 3px 3px 24px 0;
+$box-shadow-card: 0 4px 18px 0 rgba(58, 39, 63, 0.1);
+$box-shadow-multiple-colors: $white 10px -10px 0px -3px, $purple 10px -10px,
+  $white 20px -20px 0px -3px, $yellow 20px -20px, $white 30px -30px 0px -3px,
+  $orange 30px -30px, $white 40px -40px 0px -3px, $light-red 40px -40px;

@@ -11,11 +11,9 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="layout">
-      <ScrollToTop />
       <Header />
-      <div className="layout__content">
-        <div>{children}</div>
-      </div>
+      <ScrollToTop />
+      <div className="layout__content">{children}</div>
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@
 
 .navResponsive {
   position: fixed;
-  top: 6rem;
+  top: 8rem;
   right: -100%;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   transition: all 0.3s ease-in-out;
   &--isOpened {
     position: fixed;
-    top: 6rem;
+    top: 8rem;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -31,9 +31,9 @@
   }
   &__link {
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: $bolder;
     color: $white;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.05rem;
   }
   &__line {
     width: 25%;
@@ -47,7 +47,7 @@
   &__submenu {
     display: flex;
     font-size: 1.1rem;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.05rem;
     margin: 15px 0 0 0;
   }
 }

@@ -4,8 +4,9 @@
 .explore {
   display: flex;
   flex-direction: column;
-  max-width: 1400px;
   margin-bottom: 5rem;
+  max-width: 1200px;
+  width: 100%;
   @include sm {
     margin-bottom: 2.5rem;
   }
@@ -16,19 +17,26 @@
       flex-direction: column;
       margin-bottom: 3rem;
     }
+    &__title {
+      font-size: 2rem;
+      font-weight: $bolder;
+      @include sm {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+      }
+    }
     &__details {
-      font-size: 1.2rem;
       margin: auto 0 auto auto;
-      font-weight: $light;
     }
   }
   &__categoryCards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
     @include sm {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
   }
 }

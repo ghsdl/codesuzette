@@ -4,7 +4,7 @@
 .categoryCard {
   border: 2px solid $white;
   background-color: $white;
-  box-shadow: $box-shadow-category-card;
+  box-shadow: $box-shadow-card;
   height: 250px;
   padding: 1.15rem;
   border-radius: 0.5rem;
@@ -24,14 +24,13 @@
 
     &__label {
       line-height: 1.7;
-      font-size: 1.5rem;
-      font-weight: $bolder;
+      font-size: 1.3rem;
+      font-weight: $bold;
       text-transform: capitalize;
     }
     &__ressources {
       line-height: 1.7;
       font-size: 1.2rem;
-      font-weight: $light;
       margin: auto 0 auto auto;
     }
   }

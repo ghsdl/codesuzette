@@ -1,7 +1,12 @@
 import Layout from '../../components/layout/layout/Layout';
+import About from '../../components/features/About/About';
 
-const About = () => {
-  return <Layout></Layout>;
+const AboutPage = () => {
+  return (
+    <Layout>
+      <About />
+    </Layout>
+  );
 };
 
-export default About;
+export default AboutPage;

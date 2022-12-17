@@ -3,12 +3,13 @@
 
 .discover {
   display: flex;
-  max-width: 1400px;
-  height: calc(100vh - 115px);
-  margin-bottom: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  height: calc(100vh - 73px);
   @include sm {
     height: auto;
     flex-direction: column-reverse;
+    margin-bottom: 3rem;
   }
   @include md {
     height: auto;
@@ -29,22 +30,11 @@
     }
     &__titleContainer {
       width: 100%;
-      &__title {
-        font-size: 2.5rem;
-        line-height: 1.5;
-        font-weight: 600;
-        letter-spacing: 0.05rem;
-        @include sm {
-          font-size: 1.6rem;
-        }
-      }
       &__intro {
-        font-family: 'Supreme', sans-serif;
-        font-size: 1.2rem;
-        color: $purple;
         line-height: 1.5;
         letter-spacing: 0.05rem;
         margin-bottom: 3rem;
+        font-size: 1.4rem;
         @include sm {
           font-size: 1rem;
         }
@@ -52,10 +42,14 @@
     }
     &__scrollDown {
       display: flex;
+      align-items: center;
       &__paragraph {
-        font-weight: $bolder;
+        font-weight: $bold;
         margin-right: 2rem;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        @include sm {
+          font-size: 1.2rem;
+        }
       }
     }
   }

@@ -1,0 +1,54 @@
+@import '../../../styles/styles.scss';
+@import '../../../styles/responsive.scss';
+
+.about {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  @include sm {
+    margin: 0 auto;
+  }
+  &__header {
+    display: flex;
+    margin: 3rem auto;
+  }
+  &__emoji {
+    margin-right: 1.7rem;
+  }
+  &__mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 3rem 0;
+  }
+  &__intro {
+    display: flex;
+    text-align: center;
+    width: 50%;
+    font-size: 1.7rem;
+    line-height: 2.125rem;
+    color: $light-purple;
+    margin: 0 0 3rem 0;
+    @include sm {
+      font-size: 1.2rem;
+      margin: 0 0 2rem 0;
+      width: 100%;
+    }
+  }
+  &__logo {
+    width: 15%;
+    @include sm {
+      width: 25%;
+    }
+  }
+  &__cards {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+    @include sm {
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,4 +1,3 @@
-import Subtitle from '../../factory/Subtitle/Subtitle';
 import Paragraph from '../../factory/Paragraph/Paragraph';
 import CategoryCard from '../../factory/CategoryCard/CategoryCard';
 import { CATEGORIES } from './ExploreConst.js';
@@ -22,7 +21,9 @@ const Explore = () => {
   return (
     <div className="explore">
       <div className="explore__header">
-        <Subtitle>Explorez les ressources</Subtitle>
+        <Paragraph className="explore__header__title">
+          Explorez les ressources
+        </Paragraph>
         <Paragraph className="explore__header__details">
           6 catégories - 5 languages - 117 ressources
         </Paragraph>

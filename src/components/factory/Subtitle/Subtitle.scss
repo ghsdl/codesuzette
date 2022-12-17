@@ -6,9 +6,7 @@
   align-items: center;
   color: $purple;
   font-size: 2rem;
-  margin-bottom: 2rem;
   @include sm {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
   }
 }

@@ -4,6 +4,11 @@
 .header {
   display: flex;
   transition: all 0.3s ease-in-out;
+  max-width: 1200px;
+  width: 100%;
+  @include sm {
+    padding: 3rem 0;
+  }
   &__link {
     display: flex;
     flex: 1 1 0px;
