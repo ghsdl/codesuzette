@@ -5,8 +5,8 @@
   border: 2px solid $white;
   background-color: $white;
   box-shadow: $box-shadow-card;
-  height: 250px;
-  padding: 1.15rem;
+  height: 200px;
+  padding: 1.15rem 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
   &:hover {
@@ -14,14 +14,13 @@
   }
   &__header {
     width: 100%;
-    height: 50%;
+    height: 125px;
   }
   &__footer {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 50%;
-
+    height: 30px;
     &__label {
       line-height: 1.7;
       font-size: 1.3rem;

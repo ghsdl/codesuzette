@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import ScrollToTop from '../../features/ScrollToTop/ScrollToTop';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
@@ -9,9 +9,10 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <div className="layout">
-      <Header />
+    <div className={isNavOpen ? 'layout layout--isOpened' : 'layout'}>
+      <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <ScrollToTop />
       <div className="layout__content">{children}</div>
       <Footer />

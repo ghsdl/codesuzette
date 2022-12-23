@@ -1,23 +1,47 @@
+import { useNavigate } from 'react-router-dom';
+import Loading from '../../factory/Loading/Loading';
 import Paragraph from '../../factory/Paragraph/Paragraph';
 import CategoryCard from '../../factory/CategoryCard/CategoryCard';
-import { CATEGORIES } from './ExploreConst.js';
-import websites from '../../../assets/animations/websites.json';
-import courses from '../../../assets/animations/courses.json';
-import videos from '../../../assets/animations/videos.json';
-import games from '../../../assets/animations/games.json';
-import challenges from '../../../assets/animations/challenges.json';
-import readings from '../../../assets/animations/readings.json';
+import { getLabel, getAnimatedIcon } from './ExploreUtils';
+import size from 'lodash/size';
 import './Explore.scss';
 
-const Explore = () => {
-  const mock = [
-    { name: 'websites', resources: [] },
-    { name: 'courses', resources: [] },
-    { name: 'videos', resources: [] },
-    { name: 'readings', resources: [] },
-    { name: 'games', resources: [] },
-    { name: 'challenges', resources: [] }
-  ];
+interface Resource {
+  id: number;
+  name: string;
+  url: string;
+  description: string;
+  image: string;
+  locale: string;
+  price: string;
+  categories: number;
+  tags: [];
+}
+
+interface GenericObject {
+  id: number;
+  name: string;
+  resources: object[];
+}
+
+interface ExploreProps {
+  categories: GenericObject[];
+  tags: GenericObject[];
+  resources: Resource[];
+  loadingResources: boolean | null;
+  loadingCategories: boolean | null;
+  loadingTags: boolean | null;
+}
+
+const Explore = ({
+  resources,
+  categories,
+  tags,
+  loadingResources,
+  loadingCategories,
+  loadingTags
+}: ExploreProps) => {
+  const navigate = useNavigate();
   return (
     <div className="explore">
       <div className="explore__header">
@@ -25,36 +49,27 @@ const Explore = () => {
           Explorez les ressources
         </Paragraph>
         <Paragraph className="explore__header__details">
-          6 catégories - 5 languages - 117 ressources
+          {`${size(categories)} catégories - ${size(tags)} languages - ${size(
+            resources
+          )} ressources`}
         </Paragraph>
       </div>
       <div className="explore__categoryCards">
-        {mock.map((category, index) => {
-          return (
-            <CategoryCard
-              key={index}
-              label={
-                CATEGORIES.find((CAT) => {
-                  return category?.name === CAT?.value;
-                })?.label
-              }
-              ressourcesNumber={category.resources.length}
-              animationData={
-                category?.name === 'websites'
-                  ? websites
-                  : category?.name === 'courses'
-                  ? courses
-                  : category?.name === 'videos'
-                  ? videos
-                  : category?.name === 'games'
-                  ? games
-                  : category?.name === 'challenges'
-                  ? challenges
-                  : readings
-              }
-            />
-          );
-        })}
+        {(loadingCategories || loadingResources || loadingTags) && <Loading />}
+        {!loadingCategories &&
+          !loadingResources &&
+          !loadingTags &&
+          categories.map((category, index) => {
+            return (
+              <CategoryCard
+                key={index}
+                label={getLabel(category)}
+                ressourcesNumber={category.resources.length}
+                animationData={getAnimatedIcon(category)}
+                onClick={() => navigate(`/${category.name}`)}
+              />
+            );
+          })}
       </div>
     </div>
   );

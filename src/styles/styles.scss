@@ -20,6 +20,8 @@ $bolder: 800;
 
 $box-shadow: rgba(58, 39, 63, 0.2) 3px 3px 24px 0;
 $box-shadow-card: 0 4px 18px 0 rgba(58, 39, 63, 0.1);
-$box-shadow-multiple-colors: $white 10px -10px 0px -3px, $purple 10px -10px,
-  $white 20px -20px 0px -3px, $yellow 20px -20px, $white 30px -30px 0px -3px,
-  $orange 30px -30px, $white 40px -40px 0px -3px, $light-red 40px -40px;
+$linear-gradient: linear-gradient(
+  to right,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(255, 255, 255, 0.3) 100%
+);

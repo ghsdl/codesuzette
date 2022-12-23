@@ -47,7 +47,7 @@ const About = () => {
         />
         <AboutCard
           title="scenes"
-          label="Je suis Maëva et je suis Développeuse web. Code Suzette est un projet gratuit et maintenu autant que possible selon mon temps libre."
+          label="Code Suzette est un projet gratuit et maintenu autant que possible selon le temps libre de sa créatrice."
           isGreen={true}
         />
       </section>
