@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getResourcesByCategory } from '../Utils';
 import { CATEGORIES } from './CategoryConst';
 import Layout from '../../components/layout/layout/Layout';
-import Loading from '../../components/factory/Loading/Loading';
+import CardLoader from '../../components/factory/CardLoader/CardLoader';
 import ResourceCard from '../../components/factory/ResourceCard/ResourceCard';
 import Paragraph from '../../components/factory/Paragraph/Paragraph';
 import isEmpty from 'lodash/isEmpty';
@@ -47,7 +47,10 @@ const CategoryPage = ({ category }: CategoryProps) => {
   return (
     <Layout>
       <div className="category">
-        {loadingResourcesByCategory && <Loading />}
+        {loadingResourcesByCategory &&
+          resourcesByCategory.map(() => {
+            return <CardLoader />;
+          })}
         {isEmpty(resourcesByCategory) && !loadingResourcesByCategory && (
           <Paragraph>{`No resources found in ${category}`} </Paragraph>
         )}
