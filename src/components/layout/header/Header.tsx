@@ -18,7 +18,7 @@ const Header = ({ isNavOpen, setIsNavOpen }: HeaderProps) => {
         <Picture src={LOGO} alt="logo" className="header__logo" />
       </Link>
       <NavMenu className="header__navMenu" />
-      <NavResponsive isNavOpen={isNavOpen} />
+      <NavResponsive isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <NavIcon
         isNavOpen={isNavOpen}
         setIsNavOpen={setIsNavOpen}

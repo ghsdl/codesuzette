@@ -5,10 +5,15 @@ import './NavResponsive.scss';
 
 interface NavResponsiveProps {
   isNavOpen: boolean;
+  setIsNavOpen: (open: boolean) => void;
   className?: string;
 }
 
-const NavResponsive = ({ isNavOpen, className }: NavResponsiveProps) => {
+const NavResponsive = ({
+  isNavOpen,
+  setIsNavOpen,
+  className
+}: NavResponsiveProps) => {
   return (
     <nav
       className={
@@ -24,7 +29,11 @@ const NavResponsive = ({ isNavOpen, className }: NavResponsiveProps) => {
           {menu && menu.submenus && (
             <div className="navResponsive__submenusContainer">
               {menu.submenus.map((submenu, index) => (
-                <div key={index} className="navResponsive__submenuContainer">
+                <div
+                  key={index}
+                  onClick={() => setIsNavOpen(!isNavOpen)}
+                  className="navResponsive__submenuContainer"
+                >
                   <NavLink to={submenu.to} className="navResponsive__submenu">
                     {submenu.icon && (
                       <Icon
