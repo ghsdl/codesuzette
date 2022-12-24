@@ -43,17 +43,15 @@
     }
   }
   &__label {
-    width: 80%;
     text-align: center;
     line-height: 1.7rem;
     color: $white;
-    padding: 0 1rem 3rem 1rem;
-    letter-spacing: 0.05rem;
-    font-size: 1.3rem;
+    padding: 0 1.3rem 4rem 1.3rem;
+    letter-spacing: 0.07rem;
+    font-size: 1.1rem;
     @include sm {
       font-size: 1rem;
       line-height: 1.3rem;
-      padding: 0 0 4rem 0;
     }
   }
   &__front {

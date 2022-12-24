@@ -37,17 +37,17 @@ const About = () => {
       <section className="about__cards">
         <AboutCard
           title="Behind"
-          label="L'histoire de ce projet a débuté pour deux raisons : mon amour pour le code et une forte envie de me rendre utile."
+          label="Le projet est né d'une volonté d'avoir au même endroit des ressources dans lesquelles piocher selon le besoin ou pour explorer."
           isRed={true}
         />
         <AboutCard
           title="the"
-          label="La mission première du site est et restera de faciliter l'accès à des ressources sur le développement web."
+          label="La mission première du site sera toujours de faciliter l'accès à des ressources sur le développement web pour apprendre et s'entraîner."
           isLightPurple={true}
         />
         <AboutCard
           title="scenes"
-          label="Code Suzette est un projet gratuit et maintenu autant que possible selon le temps libre de sa créatrice."
+          label="Code Suzette est un projet perso gratuit et maintenu autant que possible selon le temps libre de sa créatrice."
           isGreen={true}
         />
       </section>

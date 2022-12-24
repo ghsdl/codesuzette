@@ -26,21 +26,20 @@ const CategoryCard = ({
       onClick={onClick}
       className={`categoryCard ${className}`}
     >
-      <div className="categoryCard__header">
-        <AnimatedIcon
-          isStopped={isStopped}
-          width={100}
-          height={100}
-          options={{
-            loop: 0,
-            autoplay: false,
-            animationData: animationData,
-            rendererSettings: {
-              preserveAspectRatio: 'xMidYMid slice'
-            }
-          }}
-        />
-      </div>
+      <AnimatedIcon
+        isStopped={isStopped}
+        width={100}
+        height={100}
+        options={{
+          loop: 0,
+          autoplay: false,
+          animationData: animationData,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        }}
+        className="categoryCard__header"
+      />
       <div className="categoryCard__footer">
         <Paragraph className="categoryCard__footer__label">{label}</Paragraph>
         <Paragraph className="categoryCard__footer__ressources">{`${ressourcesNumber} ${
