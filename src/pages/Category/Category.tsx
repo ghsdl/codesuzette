@@ -48,8 +48,8 @@ const CategoryPage = ({ category }: CategoryProps) => {
     <Layout>
       <div className="category">
         {loadingResourcesByCategory &&
-          resourcesByCategory.map(() => {
-            return <CardLoader />;
+          resourcesByCategory.map((resource) => {
+            return <CardLoader key={resource.id} />;
           })}
         {isEmpty(resourcesByCategory) && !loadingResourcesByCategory && (
           <Paragraph>{`No resources found in ${category}`} </Paragraph>
