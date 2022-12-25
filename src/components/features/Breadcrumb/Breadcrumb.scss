@@ -1,0 +1,15 @@
+@import '../../../styles/styles.scss';
+@import '../../../styles/responsive.scss';
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  margin: 3rem 0 0 0;
+  font-size: 0.75em;
+  &--active {
+    color: $light-purple;
+  }
+  &--inactive {
+    color: $yellow;
+  }
+}

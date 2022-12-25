@@ -1,7 +1,7 @@
 export const CATEGORIES = [
   {
     value: 'websites',
-    label: 'Sites Web'
+    label: 'Sites'
   },
   {
     value: 'courses',

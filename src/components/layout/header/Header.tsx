@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import LOGO from '../../../assets/images/LOGO.svg';
 import Picture from '../../factory/Picture/Picture';
-import NavMenu from '../nav/NavMenu';
-import NavResponsive from '../nav/NavResponsive';
-import NavIcon from '../nav/NavIcon';
+import NavMenu from '../NavBar/NavMenu';
+import NavResponsive from '../NavBar/NavResponsive';
+import NavIcon from '../NavBar/NavIcon';
 import './Header.scss';
 
 interface HeaderProps {

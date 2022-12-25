@@ -1,5 +1,5 @@
 import './Footer.scss';
-import Paragraph from '../.././factory/Paragraph/Paragraph';
+import Paragraph from '../../factory/Paragraph/Paragraph';
 import Picture from '../../factory/Picture/Picture';
 import LOGO from '../../../assets/images/LOGO_VERTICAL_WHITE.svg';
 

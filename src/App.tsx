@@ -70,7 +70,7 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
-        <Route path="/websites" element={<Category category="readings" />} />
+        <Route path="/websites" element={<Category category="websites" />} />
         <Route path="/courses" element={<Category category="courses" />} />
         <Route path="/videos" element={<Category category="videos" />} />
         <Route path="/readings" element={<Category category="readings" />} />

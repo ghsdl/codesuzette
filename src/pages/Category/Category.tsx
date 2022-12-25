@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { getResourcesByCategory } from '../Utils';
 import { CATEGORIES } from './CategoryConst';
-import Layout from '../../components/layout/layout/Layout';
+import Layout from '../../components/layout/Layout/Layout';
 import CardLoader from '../../components/factory/CardLoader/CardLoader';
 import ResourceCard from '../../components/factory/ResourceCard/ResourceCard';
 import Paragraph from '../../components/factory/Paragraph/Paragraph';
+import Breadcrumb from '../../components/features/Breadcrumb/Breadcrumb';
 import isEmpty from 'lodash/isEmpty';
 import './Category.scss';
 
@@ -54,11 +55,14 @@ const CategoryPage = ({ category }: CategoryProps) => {
         {isEmpty(resourcesByCategory) && !loadingResourcesByCategory && (
           <Paragraph>{`No resources found in ${category}`} </Paragraph>
         )}
-        {!loadingResourcesByCategory &&
-          !isEmpty(resourcesByCategory) &&
-          resourcesByCategory.map((resource) => {
-            return <ResourceCard key={resource.id} resource={resource} />;
-          })}
+        <Breadcrumb category={filteredCategory} />
+        <div className="category__cards">
+          {!loadingResourcesByCategory &&
+            !isEmpty(resourcesByCategory) &&
+            resourcesByCategory.map((resource) => {
+              return <ResourceCard key={resource.id} resource={resource} />;
+            })}
+        </div>
       </div>
     </Layout>
   );
