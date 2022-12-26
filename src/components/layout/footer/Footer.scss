@@ -8,9 +8,12 @@
   align-items: center;
   &__main {
     max-width: 1200px;
-    width: 90%;
+    width: 83%;
     display: flex;
     justify-content: space-between;
+    @include sm {
+      width: 85%;
+    }
   }
   &__logo {
     width: 60px;
