@@ -20,7 +20,7 @@ interface GenericObject {
   resources: object[];
 }
 
-interface HomeProps {
+interface HomePageProps {
   resources: Resource[];
   categories: GenericObject[];
   tags: GenericObject[];
@@ -36,7 +36,7 @@ const HomePage = ({
   loadingResources,
   loadingCategories,
   loadingTags
-}: HomeProps) => {
+}: HomePageProps) => {
   return (
     <Layout>
       <Discover />

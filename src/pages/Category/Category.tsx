@@ -9,7 +9,7 @@ import Breadcrumb from '../../components/features/Breadcrumb/Breadcrumb';
 import isEmpty from 'lodash/isEmpty';
 import './Category.scss';
 
-interface CategoryProps {
+interface CategoryPageProps {
   category: string;
 }
 
@@ -27,7 +27,7 @@ interface Resource {
 
 type Resources = Resource[];
 
-const CategoryPage = ({ category }: CategoryProps) => {
+const CategoryPage = ({ category }: CategoryPageProps) => {
   const [loadingResourcesByCategory, setLoadingResourcesByCategory] = useState<
     boolean | null
   >(null);
@@ -52,10 +52,10 @@ const CategoryPage = ({ category }: CategoryProps) => {
           resourcesByCategory.map((resource) => {
             return <CardLoader key={resource.id} />;
           })}
-        {isEmpty(resourcesByCategory) && !loadingResourcesByCategory && (
-          <Paragraph>{`No resources found in ${category}`} </Paragraph>
-        )}
         <Breadcrumb category={filteredCategory} />
+        {isEmpty(resourcesByCategory) && !loadingResourcesByCategory && (
+          <Paragraph className="category__paragraph">{`No resources found in ${category}`}</Paragraph>
+        )}
         <div className="category__cards">
           {!loadingResourcesByCategory &&
             !isEmpty(resourcesByCategory) &&

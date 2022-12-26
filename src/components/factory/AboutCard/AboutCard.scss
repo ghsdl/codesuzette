@@ -3,14 +3,12 @@
 
 .aboutCard {
   position: relative;
-  width: 350px;
-  height: 400px;
-  margin: 0 auto;
+  width: 300px;
+  height: 350px;
   border-radius: 0.5rem;
-  margin: auto 1rem;
   box-shadow: $box-shadow;
   cursor: pointer;
-  @include sm {
+  @include xl {
     width: 250px;
     height: 300px;
     margin: 1rem auto;
@@ -29,7 +27,7 @@
   &__title {
     font-size: 3rem;
     font-family: 'Abhaya Libre', serif;
-    @include sm {
+    @include xl {
       font-size: 2rem;
     }
     &--red {
@@ -48,10 +46,9 @@
     color: $white;
     padding: 0 1.3rem 4rem 1.3rem;
     letter-spacing: 0.07rem;
-    font-size: 1.1rem;
-    @include sm {
-      font-size: 1rem;
-      line-height: 1.3rem;
+    @include xl {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
     }
   }
   &__front {
@@ -73,7 +70,7 @@
 
 .aboutCard:hover .aboutCard__face.aboutCard__front {
   height: 100px;
-  @include sm {
+  @include xl {
     height: 70px;
   }
 }

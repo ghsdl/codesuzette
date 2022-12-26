@@ -4,7 +4,10 @@
 .about {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   &__header {
     display: flex;
     margin: 2rem auto;
@@ -39,9 +42,10 @@
   }
   &__cards {
     display: flex;
+    gap: 3rem;
     justify-content: center;
     margin: 2rem auto;
-    @include sm {
+    @include md {
       flex-direction: column;
     }
   }
