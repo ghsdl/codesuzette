@@ -1,0 +1,39 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.scrollToTop {
+  position: relative;
+
+  &__icon {
+    background-color: $yellow;
+    border: 2px solid $white;
+    border-radius: 50%;
+    color: $white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 50px;
+
+    @include sm {
+      height: 35px;
+      width: 35px;
+    }
+
+    &--position {
+      bottom: 40px;
+      position: fixed;
+      right: 70px;
+
+      @include sm {
+        bottom: 40px;
+        right: 12px;
+      }
+    }
+
+    &:hover {
+      background: $white;
+      border: 2px solid $yellow;
+      color: $yellow;
+    }
+  }
+}

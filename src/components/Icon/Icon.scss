@@ -1,0 +1,33 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  &--red {
+    color: $light-red;
+  }
+
+  &--green {
+    color: $green;
+  }
+
+  &--yellow {
+    color: $yellow;
+  }
+
+  &--lightPurple {
+    color: $light-purple;
+  }
+
+  &--lightBlue {
+    color: $light-blue;
+  }
+
+  &--purple {
+    color: $purple;
+  }
+}

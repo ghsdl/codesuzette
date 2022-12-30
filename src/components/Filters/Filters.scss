@@ -1,0 +1,17 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.filters {
+  &__header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1.5rem 0;
+  }
+  &__title {
+    font-size: 1rem;
+    font-weight: $bold;
+    color: $purple;
+  }
+}

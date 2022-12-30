@@ -1,0 +1,10 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.loader {
+  border-radius: 0.5rem;
+
+  @include sm {
+    width: 300px;
+  }
+}

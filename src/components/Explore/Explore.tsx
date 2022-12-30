@@ -1,6 +1,7 @@
-import Layout from '../../components/Layout/Layout';
-import Discover from '../../components/Discover/Discover';
-import Explore from '../../components/Explore/Explore';
+import Paragraph from '../Paragraph/Paragraph';
+import Categories from '../Categories/Categories';
+import size from 'lodash/size';
+import './Explore.scss';
 
 interface Resource {
   id: number;
@@ -20,7 +21,7 @@ interface GenericObject {
   resources: number[];
 }
 
-interface HomePageProps {
+interface ExploreProps {
   resources: Resource[];
   categories: GenericObject[];
   tags: GenericObject[];
@@ -29,27 +30,34 @@ interface HomePageProps {
   loadingTags: boolean | null;
 }
 
-const HomePage = ({
+const Explore = ({
   resources,
   categories,
   tags,
   loadingResources,
   loadingCategories,
   loadingTags
-}: HomePageProps) => {
+}: ExploreProps) => {
   return (
-    <Layout>
-      <Discover />
-      <Explore
-        resources={resources}
+    <div className="explore">
+      <div className="explore__header">
+        <Paragraph className="explore__header__title">
+          Explorez les ressources
+        </Paragraph>
+        <Paragraph className="explore__header__details">
+          {`${size(categories)} catégories - ${size(tags)} languages - ${size(
+            resources
+          )} ressources`}
+        </Paragraph>
+      </div>
+      <Categories
         categories={categories}
-        tags={tags}
         loadingResources={loadingResources}
         loadingCategories={loadingCategories}
         loadingTags={loadingTags}
       />
-    </Layout>
+    </div>
   );
 };
 
-export default HomePage;
+export default Explore;

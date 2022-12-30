@@ -1,0 +1,17 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.title {
+  display: flex;
+  align-items: center;
+  color: $light-purple;
+  font-size: 2.5rem;
+  font-family: 'Abhaya Libre', serif;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+  margin-bottom: 3rem;
+
+  @include sm {
+    font-size: 2rem;
+  }
+}

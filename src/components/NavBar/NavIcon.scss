@@ -1,0 +1,13 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.navIcon {
+  position: relative;
+  display: flex;
+  width: 30px;
+
+  &__icon {
+    font-size: 2rem;
+    margin: auto;
+  }
+}

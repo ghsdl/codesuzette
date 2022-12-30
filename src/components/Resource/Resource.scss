@@ -1,0 +1,121 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.resource {
+  display: flex;
+  flex-direction: column;
+  box-shadow: $box-shadow-card;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  @include sm {
+    width: 300px;
+  }
+
+  &__header {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: relative;
+
+    &__picture {
+      display: block;
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 2;
+      display: block;
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: $linear-gradient;
+      transform: skewX(-25deg);
+    }
+
+    &:hover::before {
+      animation: shine 0.75s;
+    }
+
+    @keyframes shine {
+      100% {
+        left: 125%;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    height: 220px;
+
+    &__titleContainer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__title {
+      font-size: 1.563rem;
+      font-weight: $bold;
+      text-transform: capitalize;
+
+      @include xl {
+        font-size: 1.3rem;
+      }
+    }
+
+    &__locale {
+      width: 34px;
+      height: 34px;
+    }
+
+    &__price {
+      font-weight: $bold;
+      width: fit-content;
+      text-decoration: underline wavy $purple;
+      font-size: 0.9rem;
+      margin: 0.5rem 0 1.5rem 0;
+      color: $light-purple;
+
+      @include xl {
+        margin: 0.5rem 0 2rem 0;
+      }
+    }
+
+    &__description {
+      line-height: 1.35rem;
+      height: 100px;
+
+      @include xl {
+        font-size: 0.955rem;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem 0 1.5rem;
+    gap: 0.6rem;
+    height: 80px;
+
+    &__icon {
+      width: 28px;
+      height: 28px;
+
+      @include xl {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}

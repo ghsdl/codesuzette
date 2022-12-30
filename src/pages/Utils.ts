@@ -9,19 +9,30 @@ interface Resource {
   locale: string;
   price: string;
   categories: number;
-  tags: [];
+  tagsName: [];
 }
 
 interface GenericObject {
   id: number;
   name: string;
-  resources: object[];
+  resources: number[];
+}
+
+interface TagLevelObject {
+  id: number;
+  name: string;
 }
 
 interface ResourceTag {
   id: number;
   resources_id: number;
   tags_id: number;
+}
+
+interface LevelTag {
+  id: number;
+  resources_id: number;
+  levels_id: number;
 }
 
 const getResources = async (
@@ -46,6 +57,17 @@ const getCategories = async (
   return categories.data;
 };
 
+const getTags = async (
+  setTags: React.Dispatch<React.SetStateAction<GenericObject[]>>,
+  setLoadingTags: React.Dispatch<React.SetStateAction<boolean | null>>
+): Promise<GenericObject[]> => {
+  setLoadingTags(true);
+  const tags = await getData('http://localhost:8055/items/tags');
+  setTags(tags.data);
+  setLoadingTags(false);
+  return tags.data;
+};
+
 const getLevels = async (
   setLevels: React.Dispatch<React.SetStateAction<GenericObject[]>>,
   setLoadingLevels: React.Dispatch<React.SetStateAction<boolean | null>>
@@ -57,15 +79,18 @@ const getLevels = async (
   return levels.data;
 };
 
-const getTags = async (
-  setTags: React.Dispatch<React.SetStateAction<GenericObject[]>>,
-  setLoadingTags: React.Dispatch<React.SetStateAction<boolean | null>>
-): Promise<GenericObject[]> => {
-  setLoadingTags(true);
-  const tags = await getData('http://localhost:8055/items/tags');
-  setTags(tags.data);
-  setLoadingTags(false);
-  return tags.data;
+const getResourcesLevels = async (): Promise<LevelTag[]> => {
+  const resourcesLevels = await getData(
+    'http://localhost:8055/items/resources_levels'
+  );
+  return resourcesLevels.data;
+};
+
+const getResourcesTags = async (): Promise<ResourceTag[]> => {
+  const resourcesTags = await getData(
+    'http://localhost:8055/items/resources_tags'
+  );
+  return resourcesTags.data;
 };
 
 const getResourcesByCategory = async (
@@ -83,40 +108,57 @@ const getResourcesByCategory = async (
   const resourcesByCategory = await getData(
     `http://localhost:8055/items/resources?filter[categories][_eq]=${category.id}`
   );
-  const sortedResources = resourcesByCategory.data.sort(
-    (a: Resource, b: Resource) => a.name.localeCompare(b.name)
-  );
-  setResourcesByCategory(sortedResources);
+  const tags = await getData('http://localhost:8055/items/tags');
+  const resourcesTags = await getResourcesTags();
+  const levels = await getData('http://localhost:8055/items/levels');
+  const resourcesLevels = await getResourcesLevels();
+
+  const enhancedResources = resourcesByCategory.data
+    .map((resource: Resource) => {
+      let categoryName;
+      const tagsName: TagLevelObject[] = [];
+      const levelsName: TagLevelObject[] = [];
+      categories.data.filter((category: GenericObject) => {
+        if (resource.categories === category.id) {
+          return (categoryName = category.name);
+        }
+      });
+      resourcesTags.map((resourceTag: ResourceTag) => {
+        if (resourceTag.resources_id === resource.id) {
+          return tags.data.map((tag: TagLevelObject) => {
+            if (resourceTag.tags_id === tag.id) {
+              return tagsName.push({
+                id: tag.id,
+                name: tag.name
+              });
+            }
+          });
+        }
+      });
+      resourcesLevels.map((resourceLevel: LevelTag) => {
+        if (resourceLevel.resources_id === resource.id) {
+          return levels.data.map((level: TagLevelObject) => {
+            if (resourceLevel.levels_id === level.id) {
+              return levelsName.push({
+                id: level.id,
+                name: level.name
+              });
+            }
+          });
+        }
+      });
+      return {
+        ...resource,
+        categoryName: categoryName,
+        tagsName: tagsName,
+        levelsName: levelsName
+      };
+    })
+    .flat()
+    .sort((a: Resource, b: Resource) => a.name.localeCompare(b.name));
+  setResourcesByCategory(enhancedResources);
   setLoadingResourcesByCategory(false);
-  return sortedResources;
-};
-
-const getResourcesLevels = async (
-  setLoadingResourcesLevels: React.Dispatch<
-    React.SetStateAction<boolean | null>
-  >,
-  setResourcesLevels: React.Dispatch<React.SetStateAction<GenericObject[]>>
-): Promise<GenericObject[]> => {
-  setLoadingResourcesLevels(true);
-  const resourcesLevels = await getData(
-    'http://localhost:8055/items/resources_levels'
-  );
-  setResourcesLevels(resourcesLevels.data);
-  setLoadingResourcesLevels(false);
-  return resourcesLevels.data;
-};
-
-const getResourcesTags = async (
-  setLoadingResourcesTag: React.Dispatch<React.SetStateAction<boolean | null>>,
-  setResourcesTags: React.Dispatch<React.SetStateAction<ResourceTag[]>>
-): Promise<ResourceTag[]> => {
-  setLoadingResourcesTag(true);
-  const resourcesTags = await getData(
-    'http://localhost:8055/items/resources_tags'
-  );
-  setResourcesTags(resourcesTags.data);
-  setLoadingResourcesTag(false);
-  return resourcesTags.data;
+  return enhancedResources;
 };
 
 export {

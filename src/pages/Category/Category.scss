@@ -1,26 +1,45 @@
 @import '../../styles/styles.scss';
 @import '../../styles/_responsive.scss';
 
-.category {
+.categoryPage {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
-  &__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin: 3rem 0;
+  &__paragraph {
+    margin: 2rem 0 0 0;
+  }
+  &__container {
+    display: flex;
+    align-items: flex-start;
     @include xs {
-      display: flex;
       flex-direction: column;
-      gap: 2rem;
-      margin: 1.5rem auto;
     }
-    @include md {
-      grid-template-columns: repeat(2, 1fr);
+    &--left {
+      width: 20%;
+      margin: 3rem 0 0 0;
+      @include xs {
+        width: 100%;
+      }
+    }
+    &--right {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__noResource {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 6rem 0 6rem 0;
+      }
+      @include xs {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }

@@ -1,0 +1,16 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.paragraph {
+  display: flex;
+  align-items: center;
+  color: $purple;
+
+  &--white {
+    color: $white;
+  }
+
+  &--green {
+    color: $green;
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.checkbox {
+  display: flex;
+  margin: 0.5rem 0 0.5rem 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__box {
+    display: flex;
+    width: 1.2rem;
+    height: 1.2rem;
+    min-width: 1.2rem;
+    border: 1px solid $purple;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
+    &--checked {
+      background-color: $light-purple;
+      color: $white;
+      border: 1px solid $light-purple;
+    }
+  }
+
+  &__isChecked {
+    color: $white;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    color: $purple;
+    cursor: pointer;
+  }
+}

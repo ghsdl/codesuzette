@@ -1,5 +1,5 @@
-import Layout from '../../components/layout/Layout/Layout';
-import About from '../../components/features/About/About';
+import Layout from '../../components/Layout/Layout';
+import About from '../../components/About/About';
 
 const AboutPage = () => {
   return (

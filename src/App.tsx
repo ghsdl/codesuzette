@@ -14,7 +14,7 @@ interface Resource {
   locale: string;
   price: string;
   categories: number;
-  tags: [];
+  tagsName: [];
 }
 
 type Resources = Resource[];
@@ -22,7 +22,7 @@ type Resources = Resource[];
 interface GenericObject {
   id: number;
   name: string;
-  resources: object[];
+  resources: number[];
 }
 
 type Categories = GenericObject[];
