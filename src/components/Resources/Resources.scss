@@ -2,19 +2,26 @@
 @import '../../styles/responsive.scss';
 
 .resources {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
   margin: 3rem 0;
-
-  @include xs {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 1.5rem auto;
+  &__paragraph {
+    justify-content: flex-end;
+    font-weight: $bold;
   }
-
-  @include md {
-    grid-template-columns: repeat(2, 1fr);
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 3rem 0;
+    @include xs {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 1.5rem auto;
+    }
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

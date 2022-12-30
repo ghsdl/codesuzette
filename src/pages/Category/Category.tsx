@@ -38,9 +38,7 @@ type Resources = Resource[];
 const CategoryPage = ({ category }: CategoryPageProps) => {
   const [loading, setLoading] = useState<boolean | null>(null);
   const [resources, setResources] = useState<Resources>([]);
-  console.log('👀 ~ resources', resources);
   const [resourcesFiltered, setResourcesFiltered] = useState<Resources>([]);
-  console.log('👀 ~ resourcesFiltered', resourcesFiltered);
   const [prices, setPrices] = useState<{ name: string; label: string }[]>([]);
   const [locales, setLocales] = useState<{ name: string; label: string }[]>([]);
   const [codingLanguages, setCodingLanguages] = useState<
@@ -75,7 +73,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
         )}
         <div className="categoryPage__container">
           <div className="categoryPage__container--left">
-            {!loading && !isEmpty(resources) && (
+            {!isEmpty(resources) && (
               <Filters
                 resetFilters={() => {
                   resetFilters(setPrices, setLocales, setCodingLanguages);
@@ -93,7 +91,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
             )}
           </div>
           <div className="categoryPage__container--right">
-            {!loading && !isEmpty(resourcesFiltered) && (
+            {!isEmpty(resourcesFiltered) && (
               <Resources resources={resourcesFiltered} loading={loading} />
             )}
             {!isEmpty(resources) && isEmpty(resourcesFiltered) && !loading && (
