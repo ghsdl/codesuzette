@@ -7,12 +7,16 @@
   background-color: $purple;
   align-items: center;
   &__bottom {
+    text-align: center;
     justify-content: center;
     width: 100vw;
     line-height: 1.5rem;
     letter-spacing: 0.05rem;
     padding: 1rem 0;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     border-top: 1px solid $light-purple;
+    @include sm {
+      padding: 0.5rem 1rem;
+    }
   }
 }
