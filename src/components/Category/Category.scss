@@ -8,43 +8,33 @@
   border-radius: 0.5rem;
   border: 2px solid $white;
   cursor: pointer;
-
   &:hover {
     border-color: $light-purple;
   }
-
   &__icon {
-    height: 100px;
     padding-top: 2rem;
-
     @include sm {
       padding: 1.5rem;
     }
   }
-
   &__labelContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
     height: 100px;
-
     @include sm {
       padding: 1.5rem;
     }
-
     &__label {
       font-size: 1.2rem;
       font-weight: $bold;
-
       @include sm {
         font-size: 1rem;
       }
     }
-
     &__ressources {
       font-size: 1.2rem;
-
       @include sm {
         font-size: 1rem;
       }

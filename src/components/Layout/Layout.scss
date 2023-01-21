@@ -9,16 +9,13 @@
   align-items: center;
   width: 100vw;
   overflow: visible;
-
   &--isOpened {
     position: fixed;
     overflow: hidden;
   }
-
   @include sm {
     padding: 0 2rem;
   }
-
   &__content {
     display: flex;
     flex-direction: column;

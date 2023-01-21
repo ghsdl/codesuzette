@@ -1,0 +1,25 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.faq {
+  &__section {
+    margin: 0 0 1rem 0 !important;
+    button {
+      &:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      svg {
+        fill: $light-purple !important;
+      }
+      h3 {
+        span {
+          color: $purple !important;
+        }
+      }
+    }
+    section {
+      color: $purple !important;
+    }
+  }
+}

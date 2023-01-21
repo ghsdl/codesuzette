@@ -3,7 +3,7 @@
 
 .doubleFace {
   position: relative;
-  width: 275px;
+  width: 400px;
   height: 325px;
   border-radius: 0.5rem;
   box-shadow: $box-shadow;
@@ -43,7 +43,7 @@
     text-align: center;
     line-height: 1.7rem;
     color: $white;
-    padding: 0 0 4rem 0;
+    padding: 0 2rem 4rem 2rem;
     letter-spacing: 0.05rem;
     @include xl {
       font-size: 0.9rem;
@@ -52,7 +52,7 @@
   }
   &__front {
     transition: 0.6s;
-    background-color: $purple;
+    background-color: lighten($purple, 8%);
   }
   &__back {
     box-sizing: border-box;

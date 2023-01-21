@@ -1,5 +1,4 @@
 import './Category.scss';
-import { useState } from 'react';
 import AnimatedIcon from '../AnimatedIcon/AnimatedIcon';
 import Paragraph from '../Paragraph/Paragraph';
 
@@ -18,26 +17,12 @@ const Category = ({
   onClick,
   className
 }: CategoryProps) => {
-  const [isStopped, setIsStopped] = useState(true);
   return (
-    <div
-      onMouseEnter={() => setIsStopped(!isStopped)}
-      onMouseLeave={() => setIsStopped(!isStopped)}
-      onClick={onClick}
-      className={`category ${className}`}
-    >
+    <div onClick={onClick} className={`category ${className}`}>
       <AnimatedIcon
-        isStopped={isStopped}
-        width={100}
-        height={100}
-        options={{
-          loop: 0,
-          autoplay: false,
-          animationData: animationData,
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-          }
-        }}
+        animationData={animationData}
+        style={{ width: '100px', height: '100px' }}
+        hover={true}
         className="category__icon"
       />
       <div className="category__labelContainer">

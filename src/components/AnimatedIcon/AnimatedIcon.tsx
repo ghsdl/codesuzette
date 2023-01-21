@@ -1,34 +1,33 @@
-import Lottie from 'react-lottie';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 interface AnimatedIconProps {
-  options: {
-    loop?: boolean | number;
-    autoplay?: boolean;
-    animationData: object;
-    rendererSettings?: {
-      preserveAspectRatio: string;
-    };
-  };
-  isStopped?: boolean;
-  width?: number;
-  height?: number;
+  animationData: object;
+  style: object;
+  autoplay?: boolean;
+  loop?: boolean | number;
+  hover?: boolean;
+  speed?: number;
   className?: string;
 }
 
 const AnimatedIcon = ({
-  isStopped,
-  options,
-  width,
-  height,
+  animationData,
+  style,
+  loop,
+  speed,
+  hover,
+  autoplay,
   className
 }: AnimatedIconProps) => {
   return (
     <div className={className}>
-      <Lottie
-        isStopped={isStopped}
-        options={options}
-        height={height}
-        width={width}
+      <Player
+        autoplay={autoplay}
+        hover={hover}
+        loop={loop}
+        src={animationData}
+        style={style}
+        speed={speed}
       />
     </div>
   );

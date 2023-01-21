@@ -11,7 +11,7 @@ const Discover = () => {
     <div className="discover">
       <div className="discover--left">
         <div className="discover--left__titleContainer">
-          <Title>Des ressources dédiées au développment web</Title>
+          <Title>Des ressources dédiées au développement web</Title>
           <Paragraph className="discover--left__titleContainer__intro">
             Un condensé de liens pour apprendre à coder, approfondir des
             notions, monter en compétences et réaliser son potentiel dans la
@@ -22,16 +22,11 @@ const Discover = () => {
               Découvrir
             </Paragraph>
             <AnimatedIcon
-              width={30}
-              height={30}
-              options={{
-                loop: true,
-                autoplay: true,
-                animationData: scrollDown,
-                rendererSettings: {
-                  preserveAspectRatio: 'xMidYMid slice'
-                }
-              }}
+              animationData={scrollDown}
+              style={{ width: '30px', height: '30px' }}
+              loop={true}
+              autoplay={true}
+              speed={2}
             />
           </div>
         </div>

@@ -1,5 +1,5 @@
-import Paragraph from '../Paragraph/Paragraph';
 import Checkbox from '../Checkbox/Checkbox';
+import Subheading from '../Subheading/Subheading';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
@@ -33,7 +33,7 @@ const Checkboxes = ({
 }: CheckboxesProps) => {
   return (
     <div className={`checkboxes ${className}`}>
-      <Paragraph className="checkboxes__label">{label}</Paragraph>
+      <Subheading className="checkboxes__label">{label}</Subheading>
       {checkboxes.map((checkbox, index) => {
         const checked = isEmpty(
           values.find((value) => isEqual(value, checkbox))
