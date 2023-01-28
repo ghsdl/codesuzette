@@ -1,6 +1,6 @@
 import './DoubleFace.scss';
 import Paragraph from '../Paragraph/Paragraph';
-import Subtitle from '../Subtitle/Subtitle';
+import Subheading from '../Subheading/Subheading';
 import classnames from 'classnames';
 
 interface DoubleFaceProps {
@@ -24,7 +24,7 @@ const DoubleFace = ({
         <Paragraph className="doubleFace__label">{label}</Paragraph>
       </div>
       <div className="doubleFace__face doubleFace__front">
-        <Subtitle
+        <Subheading
           className={classnames(`doubleFace__title`, {
             'doubleFace__title--red': isRed,
             'doubleFace__title--light-purple': isLightPurple,
@@ -32,7 +32,7 @@ const DoubleFace = ({
           })}
         >
           {title}
-        </Subtitle>
+        </Subheading>
       </div>
     </div>
   );

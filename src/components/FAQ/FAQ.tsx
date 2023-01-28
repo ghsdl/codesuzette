@@ -8,38 +8,51 @@ const FAQ = () => {
         className="faq__section"
         label="D'autres langages seront-ils ajoutés ?"
       >
-        Cela dépendra de la demande et du temps libre de la créatrice. Si tu
-        souhaites que d'autres langages soient ajoutés, tu peux te rendre dans
-        le formulaire de contact et envoyer un message.
+        Il y a énormément de possibilités, et pour l'instant je me suis
+        concentrée uniquement sur le front-end donc cela dépendra de mon temps
+        libre. Si tu souhaites que d'autres langages soient ajoutés, tu peux me
+        laisser un message via le formulaire ci-dessous.
       </AccordionSection>
       <AccordionSection
         className="faq__section"
         label="J'ai remarqué un bug ou un lien cassé"
       >
-        Tu peux te rendre dans le formulaire de contact et envoyer un message.
-        Ou me contacter sur Twitter si tu préfères.
+        Bouh!!! C'est nul ça, du coup tu peux me laisser un message via le
+        formulaire ci-dessous.
       </AccordionSection>
       <AccordionSection
         className="faq__section"
         label="Je crée du contenu qui pourrait figurer sur le site"
       >
-        Tu peux te rendre dans le formulaire de contact et envoyer un message.
-        Ou me contacter sur Twitter si tu préfères.
+        Je n'ai pas la prétention d'avoir épuisé toutes les ressources citées
+        ici donc si tu souhaites partager ton contenu, tu peux me laisser un
+        message via le formulaire ci-dessous.
       </AccordionSection>
-      <AccordionSection
-        className="faq__section"
-        label="Pourquoi avoir choisi ce nom ?"
-      >
-        Je cherchais un nom d'un truc que j'aime bien manger couplé à un truc en
-        lien avec le web. J'ai donc choisi le nom de la recette de crêpes
-        suzette.
-      </AccordionSection>
+
       <AccordionSection
         className="faq__section"
         label="C'est quoi la stack technique du site ?"
       >
         TypeScript et React pour le front, Postgres pour la base de données et
         Directus pour l'API.
+      </AccordionSection>
+      <AccordionSection
+        className="faq__section"
+        label="Y aura-t-il des nouvelles fonctionnalités ou des améliorations ?"
+      >
+        Tellement que je voudrais mettre en place, en vrac : le "petit lexique
+        du dév", un espace personnel pour mettre en favoris des ressources et se
+        créer un véritable chemin d'apprentissage, une page par ressource pour
+        développer le contenu, une recherche globale sur le site, une
+        pagination, un dark mode, un filtre par niveau etc.
+      </AccordionSection>
+      <AccordionSection
+        className="faq__section"
+        label="Pourquoi avoir choisi ce nom ?"
+      >
+        Je cherchais un nom d'un truc que j'aime bien manger couplé à un truc en
+        lien avec le code. J'ai donc choisi le nom de la recette des crêpes
+        suzette.
       </AccordionSection>
       <AccordionSection
         className="faq__section"

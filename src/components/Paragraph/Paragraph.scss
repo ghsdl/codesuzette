@@ -11,4 +11,15 @@
   &--green {
     color: $green;
   }
+  &--lightPurple {
+    color: $light-purple;
+  }
+  &--bolder {
+    font-weight: $bolder;
+  }
+  &--underline {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
