@@ -1,4 +1,5 @@
 import Paragraph from '../Paragraph/Paragraph';
+import Subheading from '../Subheading/Subheading';
 import Categories from '../Categories/Categories';
 import size from 'lodash/size';
 import './Explore.scss';
@@ -41,9 +42,7 @@ const Explore = ({
   return (
     <div className="explore">
       <div className="explore__header">
-        <Paragraph className="explore__header__title">
-          Explorez les ressources
-        </Paragraph>
+        <Subheading>Explorez les ressources</Subheading>
         <Paragraph className="explore__header__details">
           {`${size(categories)} catégories - ${size(tags)} languages - ${size(
             resources

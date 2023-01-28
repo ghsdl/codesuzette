@@ -1,0 +1,64 @@
+@import '../../styles/styles.scss';
+@import '../../styles/responsive.scss';
+
+.textareaInput {
+  position: relative;
+  padding: 15px 0 0;
+  margin: 1rem 0 2rem 0;
+  &__field {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $grey;
+    outline: 0;
+    font-size: 1rem;
+    color: $purple;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    resize: none;
+    &::placeholder {
+      color: lighten($light-purple, 20%);
+    }
+    &:placeholder-shown ~ .textInput__label {
+      font-size: 1rem;
+      cursor: text;
+    }
+  }
+  &__label {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $grey;
+  }
+  &__error {
+    display: none;
+  }
+}
+
+.textareaInput__field:focus {
+  ~ .textareaInput__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.3s;
+    font-size: 1rem;
+    color: $purple;
+    font-weight: 700;
+  }
+  ~ .textareaInput__error {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    transition: 0.3s;
+    font-size: 0.8rem;
+    color: $light-red;
+  }
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $light-purple, $light-red, $yellow);
+  border-image-slice: 1;
+}

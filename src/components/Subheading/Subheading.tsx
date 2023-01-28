@@ -6,7 +6,7 @@ interface SubheadingProps {
 }
 
 const Subheading = ({ children, className }: SubheadingProps) => (
-  <h3 className={`subheading ${className} `}>{children}</h3>
+  <h2 className={`subheading ${className} `}>{children}</h2>
 );
 
 export default Subheading;

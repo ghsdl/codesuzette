@@ -2,38 +2,30 @@
 @import '../../styles/responsive.scss';
 
 .button {
-  cursor: pointer;
-  border: none;
-  background-color: $white;
   position: relative;
-  white-space: nowrap;
-  color: $light-purple;
+  font-size: 1rem;
+  border: 1px solid $yellow;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: none;
+}
 
+.button {
   &:before {
+    background: $yellow;
     content: '';
-  }
-
-  &--underline {
-    &:before {
-      transform-origin: 100% 50%;
-      transform: scale3d(0, 1, 1);
-      transition: transform 0.3s;
-    }
-
-    &:hover::before {
-      transform-origin: 0% 50%;
-      transform: scale3d(1, 1, 1);
-    }
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-in-out;
+    z-index: -1;
   }
 }
 
-.button::before,
-.button::after {
-  position: absolute;
-  width: 80%;
-  height: 1px;
-  background: $green;
-  top: 120%;
-  left: 10%;
-  pointer-events: none;
+.button {
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
