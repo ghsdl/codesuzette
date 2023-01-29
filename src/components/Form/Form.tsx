@@ -1,8 +1,10 @@
+import { ToastContainer, Zoom } from 'react-toastify';
 import { Formik, Form } from 'formik';
 import TextInput from '../TextInput/TextInput';
 import TextareaInput from '../TextareaInput/TextareaInput';
 import Button from '../Button/Button';
 import { getInitialValues, validate, sendEmail } from './FormUtils.js';
+import 'react-toastify/dist/ReactToastify.css';
 import './Form.scss';
 
 interface MyFormProps {
@@ -60,6 +62,7 @@ const MyForm = ({ className }: MyFormProps) => {
               >
                 Envoyer
               </Button>
+              <ToastContainer transition={Zoom} />
             </div>
           </Form>
         )}
