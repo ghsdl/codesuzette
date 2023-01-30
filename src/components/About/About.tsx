@@ -5,7 +5,7 @@ import DoubleFace from '../DoubleFace/DoubleFace';
 import Icon from '../Icon/Icon';
 import FAQ from '../FAQ/FAQ';
 import Contact from '../Contact/Contact';
-import CREPE from '../../assets/images/CREPE.svg';
+import CREPE from '../../assets/images/CREPE_SCHOLAR.svg';
 import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import { RiTwitterLine } from 'react-icons/ri';
 import './About.scss';

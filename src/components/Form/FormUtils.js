@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import Picture from '../Picture/Picture';
-import CREPE from '../../assets/images/CREPE.svg';
+import CREPE from '../../assets/images/CREPE_POINTING.svg';
 import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import set from 'lodash/set';

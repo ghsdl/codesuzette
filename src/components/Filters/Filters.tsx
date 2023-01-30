@@ -38,7 +38,7 @@ const Filters = ({
         <Button
           type="button"
           onClick={resetFilters}
-          className="button--underline"
+          className="filters__button"
         >
           Effacer
         </Button>
