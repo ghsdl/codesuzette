@@ -9,7 +9,6 @@
   padding: 0.5rem 1rem;
   background: none;
 }
-
 .button {
   &:before {
     background: $yellow;
@@ -22,7 +21,6 @@
     z-index: -1;
   }
 }
-
 .button {
   &:hover::before {
     transform: scaleX(1);

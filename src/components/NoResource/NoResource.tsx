@@ -1,7 +1,7 @@
 import Subheading from '../Subheading/Subheading';
 import Picture from '../Picture/Picture';
 import Paragraph from '../Paragraph/Paragraph';
-import CREPE from '../../assets/images/CREPE.svg';
+import CREPE from '../../assets/images/CREPE_SURPRISED.svg';
 import './NoResource.scss';
 
 interface NoResourceProps {

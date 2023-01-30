@@ -14,4 +14,10 @@
     font-weight: $bold;
     color: $purple;
   }
+  &__button {
+    font-size: 0.7rem;
+    font-weight: $bold;
+    color: $purple;
+    cursor: pointer;
+  }
 }

@@ -8,25 +8,26 @@ const FAQ = () => {
         className="faq__section"
         label="D'autres langages seront-ils ajoutés ?"
       >
-        Il y a énormément de possibilités, et pour l'instant je me suis
-        concentrée uniquement sur le front-end donc cela dépendra de mon temps
-        libre. Si tu souhaites que d'autres langages soient ajoutés, tu peux me
-        laisser un message via le formulaire ci-dessous.
+        Il y a évidemment énormément de possibilités, et pour l'instant je me
+        suis concentrée uniquement sur le front-end parce que ce sont les
+        ressources que je connais le mieux. Si tu souhaites que d'autres
+        langages soient ajoutés, tu peux me contacter via la section ci-dessous.
       </AccordionSection>
       <AccordionSection
         className="faq__section"
         label="J'ai remarqué un bug ou un lien cassé"
       >
-        Bouh!!! C'est nul ça, du coup tu peux me laisser un message via le
-        formulaire ci-dessous.
+        C'est nul ça, du coup tu peux me contacter via la section ci-dessous et
+        je regarderai dès que possible pour pallier ce problème.
       </AccordionSection>
       <AccordionSection
         className="faq__section"
         label="Je crée du contenu qui pourrait figurer sur le site"
       >
         Je n'ai pas la prétention d'avoir épuisé toutes les ressources citées
-        ici donc si tu souhaites partager ton contenu, tu peux me laisser un
-        message via le formulaire ci-dessous.
+        ici donc si tu penses que ton contenu est pertinent, tu peux me
+        contacter via la section ci-dessous et je regarderai si je peux
+        l'ajouter.
       </AccordionSection>
 
       <AccordionSection
@@ -51,8 +52,8 @@ const FAQ = () => {
         label="Pourquoi avoir choisi ce nom ?"
       >
         Je cherchais un nom d'un truc que j'aime bien manger couplé à un truc en
-        lien avec le code. J'ai donc choisi le nom de la recette des crêpes
-        suzette.
+        lien avec le code triplé à une référence à ma Bretagne natale. J'ai donc
+        choisi le nom de la recette des crêpes suzette.
       </AccordionSection>
       <AccordionSection
         className="faq__section"
