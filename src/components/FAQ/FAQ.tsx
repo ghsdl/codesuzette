@@ -9,7 +9,7 @@ const FAQ = () => {
         label="D'autres langages seront-ils ajoutés ?"
       >
         Il y a évidemment énormément de possibilités, et pour l'instant je me
-        suis concentrée uniquement sur le front-end parce que ce sont les
+        suis concentrée essentiellement sur le front-end car ce sont les
         ressources que je connais le mieux. Si tu souhaites que d'autres
         langages soient ajoutés, tu peux me contacter via la section ci-dessous.
       </AccordionSection>

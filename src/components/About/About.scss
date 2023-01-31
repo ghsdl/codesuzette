@@ -6,19 +6,34 @@
   flex-direction: column;
   width: 100%;
   max-width: 1300px;
-  &__hello {
-    margin: 4rem auto;
-    @include md {
-      margin: 2rem auto;
-    }
-  }
   &__intro {
+    display: block;
     text-align: center;
-    margin: 0 auto 5rem auto;
-    width: 65%;
-    font-size: 1.4rem;
-    line-height: 2.125rem;
+    margin: 4rem auto 5rem auto;
+    width: 50%;
+    font-size: 1.6rem;
+    line-height: 3.125rem;
     color: $light-purple;
+    & strong {
+      color: $purple;
+      font-weight: $bolder;
+      text-decoration-skip-ink: none;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-color: $light-blue;
+      text-decoration-thickness: 0.25em;
+      text-underline-offset: -0.1em;
+    }
+    & strong:last-of-type {
+      color: $purple;
+      font-weight: $bolder;
+      text-decoration-skip-ink: none;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-color: $yellow;
+      text-decoration-thickness: 0.25em;
+      text-underline-offset: -0.1em;
+    }
     @include md {
       font-size: 1.1rem;
       width: 100%;

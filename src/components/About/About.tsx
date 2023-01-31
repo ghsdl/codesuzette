@@ -13,11 +13,10 @@ import './About.scss';
 const About = () => {
   return (
     <div className="about">
-      <Subheading className="about__hello">Bienvenue! ☺️</Subheading>
       <Paragraph className="about__intro">
-        La mission de Code Suzette est de faciliter la recherche de ressources
-        sur le développement web. La liste n'est pas exhaustive, il s'agit
-        plutôt de donner des pistes pour se lancer ou parfaire ses acquis.
+        La mission de <strong>Code Suzette</strong> est de faciliter la
+        recherche de ressources sur le{' '}
+        <strong className="about__intro__webdev">développement web</strong>.
       </Paragraph>
       <section className="about__project">
         <Subheading className="about__subheading">Histoire</Subheading>
