@@ -16,7 +16,6 @@
     align-items: center;
     width: 45%;
     &__logo {
-      height: 325px;
       @include md {
         display: none;
       }

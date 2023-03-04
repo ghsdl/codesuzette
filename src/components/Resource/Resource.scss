@@ -6,11 +6,14 @@
   flex-direction: column;
   box-shadow: $box-shadow-card;
   border-radius: 0.5rem;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
     transform: scale(1.05);
     box-shadow: $box-shadow-card-hover;
+    .resource__content__title {
+      color: $light-purple;
+    }
   }
   @include sm {
     width: 300px;
@@ -27,26 +30,6 @@
       min-width: 100%;
       max-width: 100%;
       min-height: 100%;
-    }
-    &:before {
-      position: absolute;
-      top: 0;
-      left: -75%;
-      z-index: 2;
-      display: block;
-      content: '';
-      width: 50%;
-      height: 100%;
-      background: $linear-gradient;
-      transform: skewX(-25deg);
-    }
-    &:hover::before {
-      animation: shine 0.75s;
-    }
-    @keyframes shine {
-      100% {
-        left: 125%;
-      }
     }
   }
   &__content {
@@ -105,8 +88,4 @@
       }
     }
   }
-}
-
-.resource:hover .resource__content__title {
-  color: $light-purple;
 }

@@ -33,28 +33,21 @@
     color: $grey;
   }
   &__error {
-    display: none;
-  }
-}
-
-.textInput__field:focus {
-  ~ .textInput__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.3s;
-    font-size: 1rem;
-    color: $purple;
-    font-weight: 700;
-  }
-  ~ .textInput__error {
     position: absolute;
     top: 0;
     right: 0;
     display: block;
     transition: 0.3s;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: $bold;
     color: $light-red;
+  }
+}
+
+.textInput__field:focus {
+  ~ .textInput__label {
+    color: $purple;
+    font-weight: 700;
   }
   padding-bottom: 6px;
   border-width: 3px;

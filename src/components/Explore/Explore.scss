@@ -21,6 +21,9 @@
     }
     &__details {
       margin: auto 0 auto auto;
+      @include sm {
+        margin: 1rem 0 auto auto;
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ interface NoResourceProps {
 const NoResource = ({ className }: NoResourceProps) => {
   return (
     <div className={`noResource ${className}`}>
-      <Subheading>Oopsie...</Subheading>
+      <Subheading>Oops!</Subheading>
       <Picture src={CREPE} alt="logo" className="noResource__logo" />
       <Paragraph className="noResource__paragraph">
         Cette combinaison de filtres n'a retourné aucune ressource.

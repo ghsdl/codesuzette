@@ -8,7 +8,12 @@ const FAQ = () => {
   return (
     <div className="faq">
       <div className="faq__left">
-        <Picture src={CREPE} alt="logo" className="faq__left__logo" />
+        <Picture
+          src={CREPE}
+          alt="logo"
+          style={{ width: '400px' }}
+          className="faq__left__logo"
+        />
       </div>
       <div className="faq__right">
         <Accordion>
