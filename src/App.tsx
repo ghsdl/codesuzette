@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Category from './pages/Category/Category';
+import NotFound from './pages/NotFound/NotFound';
 import { getResources, getCategories, getTags } from './pages/Utils';
 
 interface Resource {
@@ -56,6 +57,8 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="*" element={<NotFound />} />
+        <Route path="/404" element={<NotFound />} />
         <Route
           path="/"
           element={
