@@ -14,8 +14,14 @@
   &--lightPurple {
     color: $light-purple;
   }
+  &--bold {
+    font-weight: $bold;
+  }
   &--bolder {
     font-weight: $bolder;
+  }
+  &--uppercase {
+    text-transform: uppercase;
   }
   &--underline {
     &:hover {

@@ -1,0 +1,21 @@
+@import '../../styles/styles.scss';
+@import '../../styles/_responsive.scss';
+
+.fourZeroFour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__logo {
+    width: 250px;
+    @include md {
+      width: 200px;
+    }
+  }
+  &__animation {
+    width: 500px;
+    margin: 2rem 0 2rem 0;
+    @include md {
+      width: 350px;
+    }
+  }
+}
