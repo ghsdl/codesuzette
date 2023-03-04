@@ -40,39 +40,28 @@ const getResourcesFiltered = (
   setResourcesFiltered
 ) => {
   let result = resources;
-  if (isEmpty(prices) && isEmpty(locales) && isEmpty(codingLanguages)) {
-    result = resources;
-  } else if (isEmpty(prices) && isEmpty(locales)) {
+  if (!isEmpty(prices) && !isEmpty(locales) && !isEmpty(codingLanguages)) {
+    result = resourcesFilteredByPrices(resources, prices);
+    result = resourcesFilteredByLocales(result, locales);
+    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
+  } else if (!isEmpty(prices) && !isEmpty(locales)) {
+    result = resourcesFilteredByPrices(resources, prices);
+    result = resourcesFilteredByLocales(result, locales);
+    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
+  } else if (!isEmpty(prices) && !isEmpty(codingLanguages)) {
+    result = resourcesFilteredByPrices(resources, prices);
+    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
+  } else if (!isEmpty(locales) && !isEmpty(codingLanguages)) {
+    result = resourcesFilteredByLocales(resources, locales);
+    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
+  } else if (!isEmpty(prices)) {
+    result = resourcesFilteredByPrices(resources, prices);
+  } else if (!isEmpty(locales)) {
+    result = resourcesFilteredByLocales(resources, locales);
+  } else if (!isEmpty(codingLanguages)) {
     result = resourcesFilteredByCodingLanguages(resources, codingLanguages);
-  } else if (isEmpty(prices) && isEmpty(codingLanguages)) {
-    result = resourcesFilteredByLocales(resources, locales);
-  } else if (isEmpty(locales) && isEmpty(codingLanguages)) {
-    result = resourcesFilteredByPrices(resources, prices);
-  } else if (isEmpty(prices)) {
-    result = resourcesFilteredByLocales(resources, locales);
-    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
-  } else if (isEmpty(locales)) {
-    result = resourcesFilteredByPrices(resources, prices);
-    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
-  } else if (isEmpty(codingLanguages)) {
-    result = resourcesFilteredByPrices(resources, prices);
-    result = resourcesFilteredByLocales(result, locales);
-  } else {
-    result = resourcesFilteredByPrices(resources, prices);
-    result = resourcesFilteredByLocales(result, locales);
-    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
-  }
-  if (!isEmpty(prices)) {
-    result = resourcesFilteredByPrices(resources, prices);
-  }
-  if (!isEmpty(locales)) {
-    result = resourcesFilteredByLocales(result, locales);
-  }
-  if (!isEmpty(codingLanguages)) {
-    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
   }
   setResourcesFiltered(result);
-  return result;
 };
 
 const getPrices = (resources) => {
