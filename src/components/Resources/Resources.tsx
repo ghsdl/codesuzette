@@ -26,11 +26,11 @@ interface ResourcesProps {
 const Resources = ({ resources, loading, className }: ResourcesProps) => {
   return (
     <div className={`resources ${className}`}>
-      <Paragraph className="resources__paragraph paragraph--bold">{`${size(
-        resources
-      )}   
-      ${size(resources) > 1 ? 'résulats.' : 'résulat.'}
-      `}</Paragraph>
+      <Paragraph className="resources__paragraph paragraph--bold">
+        {`${size(resources)}   
+          ${size(resources) > 1 ? 'résultats' : 'résultat'}
+          `}
+      </Paragraph>
       <div className="resources__cards">
         {!loading && !isEmpty(resources)
           ? resources.map((resource, index) => (

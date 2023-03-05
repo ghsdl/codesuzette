@@ -30,7 +30,7 @@ const Category = ({
           {label}
         </Paragraph>
         <Paragraph className="category__labelContainer__ressources">{`${ressourcesNumber} ${
-          ressourcesNumber > 0 ? 'ressources' : 'ressource'
+          ressourcesNumber > 1 ? 'ressources' : 'ressource'
         }`}</Paragraph>
       </div>
     </div>

@@ -15,6 +15,8 @@ import NoResource from '../../components/NoResource/NoResource';
 import Paragraph from '../../components/Paragraph/Paragraph';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
+import size from 'lodash/size';
 import './Category.scss';
 
 interface CategoryPageProps {
@@ -69,11 +71,21 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
       <div className="categoryPage">
         <Breadcrumb category={resourceCategory} />
         {isEmpty(resources) && !loading && (
-          <Paragraph className="categoryPage__paragraph">{`No resources found in the category ${category}.`}</Paragraph>
+          <Paragraph className="categoryPage__paragraph">{`Aucune ressource dans la catégorie ${get(
+            resourceCategory,
+            'label',
+            ''
+          )}.`}</Paragraph>
         )}
         <div className="categoryPage__container">
-          <div className="categoryPage__container--left">
-            {!isEmpty(resources) && (
+          {!isEmpty(resources) && size(resources) > 1 && (
+            <div
+              className={
+                size(resources) > 1
+                  ? 'categoryPage__container--left'
+                  : 'categoryPage__container--fullWidth'
+              }
+            >
               <Filters
                 resetFilters={() => {
                   resetFilters(setPrices, setLocales, setCodingLanguages);
@@ -88,9 +100,15 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
                 pricesCheckboxes={getPrices(resources)}
                 localesCheckboxes={getLocales(resources)}
               />
-            )}
-          </div>
-          <div className="categoryPage__container--right">
+            </div>
+          )}
+          <div
+            className={
+              size(resources) > 1
+                ? 'categoryPage__container--right'
+                : 'categoryPage__container--fullWidth'
+            }
+          >
             {!isEmpty(resourcesFiltered) && (
               <Resources resources={resourcesFiltered} loading={loading} />
             )}

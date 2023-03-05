@@ -17,6 +17,9 @@
     @include xs {
       flex-direction: column;
     }
+    &--fullWidth {
+      width: 100%;
+    }
     &--left {
       width: 20%;
       margin: 3rem 0 0 0;

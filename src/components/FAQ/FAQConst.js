@@ -8,16 +8,17 @@ const FAQ_CONST = [
   },
   {
     id: 2,
-    label: "J'ai remarqué un bug ou un lien cassé",
+    label: "J'ai remarqué une erreur, un bug ou un lien cassé",
     content:
       "C'est nul ça, du coup tu peux me contacter via la section ci-dessous et je regarderai dès que possible pour pallier ce problème.",
     className: 'faq__section'
   },
   {
     id: 3,
-    label: 'Je crée du contenu qui pourrait figurer sur le site',
+    label:
+      "Je crée ou j'ai connaissance de contenus qui pourraient figurer sur le site",
     content:
-      "Je n'ai pas la prétention d'avoir épuisé toutes les ressources citées ici donc si tu penses que ton contenu est pertinent, tu peux me contacter via la section ci-dessous et je regarderai si je peux l'ajouter.",
+      "Je n'ai pas la prétention d'avoir créé une liste exhaustive donc si tu penses que le contenu est pertinent, tu peux me contacter via la section ci-dessous et je regarderai si je peux l'ajouter.",
     className: 'faq__section'
   },
   {
