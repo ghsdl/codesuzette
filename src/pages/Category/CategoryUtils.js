@@ -47,7 +47,6 @@ const getResourcesFiltered = (
   } else if (!isEmpty(prices) && !isEmpty(locales)) {
     result = resourcesFilteredByPrices(resources, prices);
     result = resourcesFilteredByLocales(result, locales);
-    result = resourcesFilteredByCodingLanguages(result, codingLanguages);
   } else if (!isEmpty(prices) && !isEmpty(codingLanguages)) {
     result = resourcesFilteredByPrices(resources, prices);
     result = resourcesFilteredByCodingLanguages(result, codingLanguages);
