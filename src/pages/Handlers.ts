@@ -1,6 +1,10 @@
-/* eslint-disable no-undef */
-const getData = async (url) => {
-  const response = await fetch(url);
+const getData = async (url: string) => {
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
   try {
     if (response.status === 200) {
       const data = await response.json();
