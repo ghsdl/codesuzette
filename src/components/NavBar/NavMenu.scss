@@ -26,6 +26,11 @@
     margin: 0 0 0 3rem;
     padding: 1.5rem 0;
   }
+  a.active {
+    background-color: lighten($purple, 70%);
+    font-weight: $bolder;
+    border-left: 0.3rem solid $purple;
+  }
   &__icon {
     width: 25px;
     height: 25px;

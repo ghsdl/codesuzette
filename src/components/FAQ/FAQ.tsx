@@ -17,10 +17,10 @@ const FAQ = () => {
       </div>
       <div className="faq__right">
         <Accordion>
-          {FAQ_CONST.map((section) => {
+          {FAQ_CONST.map((section, index) => {
             return (
               <AccordionSection
-                key={section.id}
+                key={index}
                 label={section.label}
                 className={section.className}
               >

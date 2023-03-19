@@ -1,4 +1,4 @@
-import { getData } from './Handlers.js';
+import { getData } from './Handlers';
 
 interface Resource {
   id: number;
@@ -40,7 +40,9 @@ const getResources = async (
   setLoadingResources: React.Dispatch<React.SetStateAction<boolean | null>>
 ): Promise<Resource[]> => {
   setLoadingResources(true);
-  const resources = await getData('http://localhost:8055/items/resources');
+  const resources = await getData(
+    `${process.env.REACT_APP_API_ENDPOINT}/resources?limit=${process.env.REACT_APP_API_LIMIT}`
+  );
   setResources(resources.data);
   setLoadingResources(false);
   return resources.data;
@@ -51,7 +53,9 @@ const getCategories = async (
   setLoadingCategories: React.Dispatch<React.SetStateAction<boolean | null>>
 ): Promise<GenericObject[]> => {
   setLoadingCategories(true);
-  const categories = await getData('http://localhost:8055/items/categories');
+  const categories = await getData(
+    `${process.env.REACT_APP_API_ENDPOINT}/categories?limit=${process.env.REACT_APP_API_LIMIT}`
+  );
   setCategories(categories.data);
   setLoadingCategories(false);
   return categories.data;
@@ -62,7 +66,9 @@ const getTags = async (
   setLoadingTags: React.Dispatch<React.SetStateAction<boolean | null>>
 ): Promise<GenericObject[]> => {
   setLoadingTags(true);
-  const tags = await getData('http://localhost:8055/items/tags');
+  const tags = await getData(
+    `${process.env.REACT_APP_API_ENDPOINT}/tags?limit=${process.env.REACT_APP_API_LIMIT}`
+  );
   setTags(tags.data);
   setLoadingTags(false);
   return tags.data;
@@ -73,7 +79,9 @@ const getLevels = async (
   setLoadingLevels: React.Dispatch<React.SetStateAction<boolean | null>>
 ): Promise<GenericObject[]> => {
   setLoadingLevels(true);
-  const levels = await getData('http://localhost:8055/items/levels');
+  const levels = await getData(
+    `${process.env.REACT_APP_API_ENDPOINT}/levels?limit=${process.env.REACT_APP_API_LIMIT}`
+  );
   setLevels(levels.data);
   setLoadingLevels(false);
   return levels.data;
@@ -81,14 +89,14 @@ const getLevels = async (
 
 const getResourcesLevels = async (): Promise<LevelTag[]> => {
   const resourcesLevels = await getData(
-    'http://localhost:8055/items/resources_levels'
+    `${process.env.REACT_APP_API_ENDPOINT}/resources_levels?limit=${process.env.REACT_APP_API_LIMIT}`
   );
   return resourcesLevels.data;
 };
 
 const getResourcesTags = async (): Promise<ResourceTag[]> => {
   const resourcesTags = await getData(
-    'http://localhost:8055/items/resources_tags'
+    `${process.env.REACT_APP_API_ENDPOINT}/resources_tags?limit=${process.env.REACT_APP_API_LIMIT}`
   );
   return resourcesTags.data;
 };
@@ -101,16 +109,22 @@ const getResourcesByCategory = async (
   name: string
 ): Promise<Resource[]> => {
   setLoadingResourcesByCategory(true);
-  const categories = await getData('http://localhost:8055/items/categories');
+  const categories = await getData(
+    `${process.env.REACT_APP_API_ENDPOINT}/categories?limit=${process.env.REACT_APP_API_LIMIT}`
+  );
   const category = categories.data.find(
     (category: GenericObject) => category.name === name
   );
   const resourcesByCategory = await getData(
-    `http://localhost:8055/items/resources?filter[categories][_eq]=${category.id}`
+    `${process.env.REACT_APP_API_ENDPOINT}/resources?filter[categories][_eq]=${category.id}`
   );
-  const tags = await getData('http://localhost:8055/items/tags');
+  const tags = await getData(
+    `${process.env.REACT_APP_API_ENDPOINT}/tags?limit=${process.env.REACT_APP_API_LIMIT}`
+  );
   const resourcesTags = await getResourcesTags();
-  const levels = await getData('http://localhost:8055/items/levels');
+  const levels = await getData(
+    `${process.env.REACT_APP_API_ENDPOINT}/levels?limit=${process.env.REACT_APP_API_LIMIT}`
+  );
   const resourcesLevels = await getResourcesLevels();
 
   const enhancedResources = resourcesByCategory.data

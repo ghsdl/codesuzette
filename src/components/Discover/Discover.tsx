@@ -13,9 +13,8 @@ const Discover = () => {
         <div className="discover--left__titleContainer">
           <Title>Des ressources dédiées au développement web</Title>
           <Paragraph className="discover--left__titleContainer__intro">
-            Un condensé de liens pour apprendre à coder, approfondir des
-            notions, monter en compétences et réaliser son potentiel dans la
-            programmation.
+            Un condensé de liens pour apprendre à coder, s'informer, monter en
+            compétences et réaliser son potentiel dans la programmation.
           </Paragraph>
           <div className="discover--left__scrollDown">
             <Paragraph className="discover--left__scrollDown__paragraph paragraph--green">

@@ -14,7 +14,12 @@ const NavMenu = ({ className }: NavMenuProps) => {
       {menus.map((menu, index) => (
         <ul key={index} className="navMenu__container">
           <li>
-            <NavLink to={menu.to} className="navMenu__link">
+            <NavLink
+              to={menu.to}
+              className={({ isActive }) =>
+                isActive ? 'navMenu__link' : 'navMenu__link'
+              }
+            >
               {menu.label}
               {menu.icon && (
                 <Icon icon={<HiChevronDown />} className="navMenu__icon" />
