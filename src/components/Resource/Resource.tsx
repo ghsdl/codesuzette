@@ -32,7 +32,7 @@ const Resource = ({ resource }: ResourceProps) => {
       <header className="resource__header">
         <Picture
           className="resource__header__picture"
-          src={`http://localhost:8055/assets/${resource.image}`}
+          src={`${process.env.REACT_APP_API_ASSETS}/${resource.image}`}
           alt="resource screenshot"
         />
       </header>
