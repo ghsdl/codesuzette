@@ -24,14 +24,14 @@ export const menus = [
         to: '/courses'
       },
       {
-        icon: <BsBook />,
-        label: 'Lectures',
-        to: '/readings'
-      },
-      {
         icon: <BsCameraVideo />,
         label: 'Vidéos',
         to: '/videos'
+      },
+      {
+        icon: <BsBook />,
+        label: 'Lectures',
+        to: '/readings'
       },
       {
         icon: <BsController />,
