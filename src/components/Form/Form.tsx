@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import { ToastContainer, Zoom } from 'react-toastify';
 import { Formik, Form } from 'formik';
 import TextInput from '../TextInput/TextInput';
@@ -5,6 +6,7 @@ import TextareaInput from '../TextareaInput/TextareaInput';
 import Button from '../Button/Button';
 import { getInitialValues, validate, sendEmail } from './FormUtils.js';
 import 'react-toastify/dist/ReactToastify.css';
+import Reaptcha from 'reaptcha';
 import './Form.scss';
 
 interface MyFormProps {
@@ -18,6 +20,15 @@ interface FormValues {
 }
 
 const MyForm = ({ className }: MyFormProps) => {
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const captchaRef = useRef<Reaptcha>(null);
+
+  const verify = () => {
+    captchaRef?.current?.getResponse().then((res) => {
+      setCaptchaToken(res);
+    });
+  };
+
   return (
     <div className={`myForm ${className}`}>
       <Formik
@@ -55,9 +66,14 @@ const MyForm = ({ className }: MyFormProps) => {
               required={true}
             />
             <div className="myForm__buttons">
+              <Reaptcha
+                sitekey={process.env.REACT_APP_SITE_KEY}
+                ref={captchaRef}
+                onVerify={verify}
+              />
               <Button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !captchaToken}
                 className="myForm__button"
               >
                 Envoyer
