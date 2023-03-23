@@ -1,5 +1,5 @@
 import Checkboxes from '../Checkboxes/Checkboxes';
-import Button from '../Button/Button';
+import ButtonAlt from '../ButtonAlt/ButtonAlt';
 import Paragraph from '../Paragraph/Paragraph';
 import size from 'lodash/size';
 import './Filters.scss';
@@ -35,13 +35,13 @@ const Filters = ({
     <div className="filters">
       <div className="filters__header">
         <Paragraph className="filters__title">Filtres</Paragraph>
-        <Button
+        <ButtonAlt
           type="button"
           onClick={resetFilters}
           className="filters__button"
         >
           Effacer
-        </Button>
+        </ButtonAlt>
       </div>
       {size(codingLanguagesCheckboxes) > 1 && (
         <Checkboxes

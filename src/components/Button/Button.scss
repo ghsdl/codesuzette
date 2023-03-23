@@ -2,28 +2,35 @@
 @import '../../styles/responsive.scss';
 
 .button {
-  position: relative;
-  font-size: 1rem;
-  border: 1px solid $yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  appearance: button;
+  background: $light-purple;
+  border-radius: 0.5rem;
+  border-style: none;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: $light-orange;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  background: none;
-}
-.button {
-  &:before {
-    background: $yellow;
-    content: '';
-    inset: 0;
-    position: absolute;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease-in-out;
-    z-index: -1;
+  font-size: 1rem;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 22px;
+  text-align: center;
+  text-transform: none;
+  transition: background 0.2s ease-in-out;
+  &:hover {
+    background-color: lighten($purple, 8%);
   }
-}
-.button {
-  &:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
+  &--disabled {
+    background: $grey;
+    color: $light-orange;
+    cursor: not-allowed;
+    &:hover {
+      background: $grey;
+      pointer-events: none;
+    }
   }
 }

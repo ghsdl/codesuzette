@@ -4,10 +4,12 @@
 .myForm {
   &__buttons {
     display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
   &__button {
     font-weight: $bold;
-    margin: auto 0 auto auto;
+    margin: auto auto auto 0;
   }
 }
 
