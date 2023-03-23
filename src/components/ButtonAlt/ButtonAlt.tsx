@@ -1,7 +1,6 @@
-import classnames from 'classnames';
-import './Button.scss';
+import './ButtonAlt.scss';
 
-interface ButtonProps {
+interface ButtonAltProps {
   children: React.ReactNode;
   type: 'submit' | 'button';
   onClick?: () => void;
@@ -9,19 +8,17 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button = ({
+const ButtonAlt = ({
   type,
   children,
   onClick,
   disabled,
   className
-}: ButtonProps) => (
+}: ButtonAltProps) => (
   <button
     role="button"
     type={type}
-    className={classnames(`button ${className}`, {
-      'button--disabled': disabled
-    })}
+    className={`buttonAlt ${className}`}
     onClick={onClick}
     disabled={disabled}
   >
@@ -29,4 +26,4 @@ const Button = ({
   </button>
 );
 
-export default Button;
+export default ButtonAlt;
