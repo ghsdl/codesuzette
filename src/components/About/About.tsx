@@ -16,7 +16,7 @@ const About = () => {
         <Subheading className="about__subheading">Histoire</Subheading>
         <DoubleFaces />
       </section>
-      <section className="about__section">
+      <section className="about__faq">
         <Subheading className="about__subheading">
           Foire aux questions
         </Subheading>
