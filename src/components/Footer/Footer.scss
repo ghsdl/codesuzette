@@ -2,19 +2,18 @@
 @import '../../styles/responsive.scss';
 
 .footer {
-  display: flex;
-  flex-direction: column;
   background-color: $purple;
-  align-items: center;
   &__bottom {
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+    gap: 5px;
     width: 100vw;
     line-height: 1.5rem;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.07rem;
     padding: 1rem 0;
     font-size: 0.7rem;
-    border-top: 1px solid $light-purple;
     @include sm {
       padding: 0.5rem 1rem;
     }

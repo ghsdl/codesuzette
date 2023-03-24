@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Category from './pages/Category/Category';
 import NotFound from './pages/NotFound/NotFound';
+import Legals from './pages/Legals/Legals';
 import { getResources, getCategories, getTags } from './pages/Utils';
 
 interface Resource {
@@ -82,6 +83,7 @@ function App() {
           path="/challenges"
           element={<Category category="challenges" />}
         />
+        <Route path="/legals" element={<Legals />} />
       </Routes>
     </Router>
   );
