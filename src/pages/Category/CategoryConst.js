@@ -80,16 +80,16 @@ const CODING_LANGUAGES = [
     iconClassName: 'icon--green'
   },
   {
-    name: 'typescript',
-    label: 'TypeScript',
-    icon: <SiTypescript />,
-    iconClassName: 'icon--lightPurple'
-  },
-  {
     name: 'react',
     label: 'React',
     icon: <FaReact />,
     iconClassName: 'icon--lightBlue'
+  },
+  {
+    name: 'typescript',
+    label: 'TypeScript',
+    icon: <SiTypescript />,
+    iconClassName: 'icon--lightPurple'
   }
 ];
 
