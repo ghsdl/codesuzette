@@ -8,33 +8,26 @@
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
-
   @include sm {
-    padding: 3rem 0;
+    padding: 3rem 2rem;
   }
-
   &__link {
     display: flex;
     flex: 1 1 0px;
   }
-
   &__logo {
     width: 250px;
-
     @include sm {
       width: 200px;
     }
   }
-
   &__navMenu {
     @include sm {
       display: none;
     }
   }
-
   &__navIcon {
     display: none;
-
     @include sm {
       display: block;
     }

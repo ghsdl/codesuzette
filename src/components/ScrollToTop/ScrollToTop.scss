@@ -20,9 +20,9 @@
     &--position {
       bottom: 40px;
       position: fixed;
-      right: 70px;
+      right: 30px;
       @include sm {
-        bottom: 40px;
+        bottom: 20px;
         right: 12px;
       }
     }
