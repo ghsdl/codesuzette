@@ -23,21 +23,16 @@
     justify-content: space-between;
     padding: 2rem;
     height: 100px;
-    @include sm {
+    @include md {
+      flex-direction: column;
       padding: 1.5rem;
     }
     &__label {
       font-size: 1.2rem;
       font-weight: $bold;
-      @include sm {
-        font-size: 1rem;
-      }
     }
     &__ressources {
       font-size: 1.2rem;
-      @include sm {
-        font-size: 1rem;
-      }
     }
   }
 }

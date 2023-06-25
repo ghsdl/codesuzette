@@ -8,7 +8,7 @@
   margin-left: auto;
   margin-right: auto;
   height: calc(100vh - 73px);
-
+  padding: 20px;
   @include sm {
     height: auto;
     flex-direction: column-reverse;
