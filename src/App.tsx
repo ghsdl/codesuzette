@@ -1,60 +1,15 @@
-import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Category from './pages/Category/Category';
 import NotFound from './pages/NotFound/NotFound';
 import Legals from './pages/Legals/Legals';
-import { getResources, getCategories, getTags } from './pages/Utils';
-
-interface Resource {
-  id: number;
-  name: string;
-  url: string;
-  description: string;
-  image: string;
-  locale: string;
-  price: string;
-  categories: number;
-  tagsName: [];
-}
-
-type Resources = Resource[];
-
-interface GenericObject {
-  id: number;
-  name: string;
-  resources: number[];
-}
-
-type Categories = GenericObject[];
-
-type Tags = GenericObject[];
+import { categories } from './data/categories.js';
+import { tags } from './data/tags.js';
+import { resources } from './data/resources.js';
+import { getResourcesByCategory } from './Utils';
 
 function App() {
-  const [loadingResources, setLoadingResources] = useState<boolean | null>(
-    null
-  );
-  const [loadingCategories, setLoadingCategories] = useState<boolean | null>(
-    null
-  );
-  const [loadingTags, setLoadingTags] = useState<boolean | null>(null);
-  const [categories, setCategories] = useState<Categories>([]);
-  const [tags, setTags] = useState<Tags>([]);
-  const [resources, setResources] = useState<Resources>([]);
-
-  useEffect(() => {
-    getResources(setResources, setLoadingResources);
-  }, []);
-
-  useEffect(() => {
-    getCategories(setCategories, setLoadingCategories);
-  }, []);
-
-  useEffect(() => {
-    getTags(setTags, setLoadingTags);
-  }, []);
-
   return (
     <Router>
       <Routes>
@@ -63,25 +18,35 @@ function App() {
         <Route
           path="/"
           element={
-            <Home
-              resources={resources}
-              categories={categories}
-              tags={tags}
-              loadingResources={loadingResources}
-              loadingCategories={loadingCategories}
-              loadingTags={loadingTags}
-            />
+            <Home resources={resources} categories={categories} tags={tags} />
           }
         />
         <Route path="/about" element={<About />} />
-        <Route path="/websites" element={<Category category="websites" />} />
-        <Route path="/courses" element={<Category category="courses" />} />
-        <Route path="/videos" element={<Category category="videos" />} />
-        <Route path="/readings" element={<Category category="readings" />} />
-        <Route path="/games" element={<Category category="games" />} />
+        <Route
+          path="/websites"
+          element={<Category resources={getResourcesByCategory('websites')} />}
+        />
+        <Route
+          path="/courses"
+          element={<Category resources={getResourcesByCategory('courses')} />}
+        />
+        <Route
+          path="/videos"
+          element={<Category resources={getResourcesByCategory('videos')} />}
+        />
+        <Route
+          path="/readings"
+          element={<Category resources={getResourcesByCategory('readings')} />}
+        />
+        <Route
+          path="/games"
+          element={<Category resources={getResourcesByCategory('games')} />}
+        />
         <Route
           path="/challenges"
-          element={<Category category="challenges" />}
+          element={
+            <Category resources={getResourcesByCategory('challenges')} />
+          }
         />
         <Route path="/legals" element={<Legals />} />
       </Routes>

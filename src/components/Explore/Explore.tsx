@@ -12,8 +12,8 @@ interface Resource {
   image: string;
   locale: string;
   price: string;
-  categories: number;
-  tagsName: [];
+  categories: string;
+  tags: string[];
 }
 
 interface GenericObject {
@@ -26,19 +26,9 @@ interface ExploreProps {
   resources: Resource[];
   categories: GenericObject[];
   tags: GenericObject[];
-  loadingResources: boolean | null;
-  loadingCategories: boolean | null;
-  loadingTags: boolean | null;
 }
 
-const Explore = ({
-  resources,
-  categories,
-  tags,
-  loadingResources,
-  loadingCategories,
-  loadingTags
-}: ExploreProps) => {
+const Explore = ({ resources, categories, tags }: ExploreProps) => {
   return (
     <div className="explore">
       <div className="explore__header">
@@ -49,12 +39,7 @@ const Explore = ({
           )} ressources`}
         </Paragraph>
       </div>
-      <Categories
-        categories={categories}
-        loadingResources={loadingResources}
-        loadingCategories={loadingCategories}
-        loadingTags={loadingTags}
-      />
+      <Categories categories={categories} />
     </div>
   );
 };

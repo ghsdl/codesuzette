@@ -13,17 +13,16 @@ interface Resource {
   image: string;
   locale: string;
   price: string;
-  categories: number;
-  tagsName: [];
+  categories: string;
+  tags: string[];
 }
 
 interface ResourcesProps {
   resources: Resource[];
-  loading: boolean | null;
   className?: string;
 }
 
-const Resources = ({ resources, loading, className }: ResourcesProps) => {
+const Resources = ({ resources, className }: ResourcesProps) => {
   return (
     <div className={`resources ${className}`}>
       <Paragraph className="resources__paragraph paragraph--bold">
@@ -32,7 +31,7 @@ const Resources = ({ resources, loading, className }: ResourcesProps) => {
           `}
       </Paragraph>
       <div className="resources__cards">
-        {!loading && !isEmpty(resources)
+        {!isEmpty(resources)
           ? resources.map((resource, index) => (
               <Resource key={index} resource={resource} />
             ))

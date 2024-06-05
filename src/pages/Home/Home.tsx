@@ -10,8 +10,8 @@ interface Resource {
   image: string;
   locale: string;
   price: string;
-  categories: number;
-  tagsName: [];
+  categories: string;
+  tags: string[];
 }
 
 interface GenericObject {
@@ -24,30 +24,13 @@ interface HomePageProps {
   resources: Resource[];
   categories: GenericObject[];
   tags: GenericObject[];
-  loadingResources: boolean | null;
-  loadingCategories: boolean | null;
-  loadingTags: boolean | null;
 }
 
-const HomePage = ({
-  resources,
-  categories,
-  tags,
-  loadingResources,
-  loadingCategories,
-  loadingTags
-}: HomePageProps) => {
+const HomePage = ({ resources, categories, tags }: HomePageProps) => {
   return (
     <Layout>
       <Discover />
-      <Explore
-        resources={resources}
-        categories={categories}
-        tags={tags}
-        loadingResources={loadingResources}
-        loadingCategories={loadingCategories}
-        loadingTags={loadingTags}
-      />
+      <Explore resources={resources} categories={categories} tags={tags} />
     </Layout>
   );
 };

@@ -16,8 +16,8 @@ interface ResourceProps {
     image: string;
     locale: string;
     price: string;
-    categories: number;
-    tagsName: [];
+    categories: string;
+    tags: string[];
   };
 }
 
@@ -32,7 +32,7 @@ const Resource = ({ resource }: ResourceProps) => {
       <header className="resource__header">
         <Picture
           className="resource__header__picture"
-          src={`${process.env.REACT_APP_API_ASSETS}/${resource.image}`}
+          src={`${resource.image}`}
           alt="resource screenshot"
         />
       </header>
