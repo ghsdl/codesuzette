@@ -1,5 +1,5 @@
 import Picture from '../Picture/Picture';
-import { RESOURSE_PRICE_CONST } from './ResourceConst';
+import { RESOURSE_PRICE_CONST, RESOURSE_TAG_CONST } from './ResourceConst';
 import HTML from '../../assets/icons/html5.svg';
 import CSS from '../../assets/icons/css3.svg';
 import JS from '../../assets/icons/javascript.svg';
@@ -15,8 +15,14 @@ const getPriceLabel = (resource) => {
 };
 
 const getCodingLanguages = (resource) => {
-  return get(resource, 'tagsName', []).map((tag, index) => {
-    if (isEqual(tag.name, 'html')) {
+  const tags = get(resource, 'tags', []).map((tag) => {
+    return RESOURSE_TAG_CONST.find((RESOURSE_TAG) => {
+      return isEqual(RESOURSE_TAG.label, tag);
+    }).label;
+  });
+
+  return tags.map((tag, index) => {
+    if (isEqual(tag, 'html')) {
       return (
         <Picture
           key={index}
@@ -25,7 +31,7 @@ const getCodingLanguages = (resource) => {
           className="resource__footer__icon"
         />
       );
-    } else if (isEqual(tag.name, 'css')) {
+    } else if (isEqual(tag, 'css')) {
       return (
         <Picture
           key={index}
@@ -34,7 +40,7 @@ const getCodingLanguages = (resource) => {
           className="resource__footer__icon"
         />
       );
-    } else if (isEqual(tag.name, 'javascript')) {
+    } else if (isEqual(tag, 'javascript')) {
       return (
         <Picture
           key={index}
@@ -43,7 +49,7 @@ const getCodingLanguages = (resource) => {
           className="resource__footer__icon"
         />
       );
-    } else if (isEqual(tag.name, 'typescript')) {
+    } else if (isEqual(tag, 'typescript')) {
       return (
         <Picture
           key={index}
@@ -52,7 +58,7 @@ const getCodingLanguages = (resource) => {
           className="resource__footer__icon"
         />
       );
-    } else if (isEqual(tag.name, 'react')) {
+    } else if (isEqual(tag, 'react')) {
       return (
         <Picture
           key={index}

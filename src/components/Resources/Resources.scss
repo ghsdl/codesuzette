@@ -6,7 +6,7 @@
   flex-direction: column;
   margin: 3rem 0;
   &__paragraph {
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-weight: $bold;
   }
   &__cards {

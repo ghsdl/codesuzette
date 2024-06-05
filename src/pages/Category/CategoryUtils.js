@@ -1,6 +1,10 @@
-import { PRICES, LOCALES, CODING_LANGUAGES } from './CategoryConst';
+import { PRICES, LOCALES, CODING_LANGUAGES, CATEGORIES } from './CategoryConst';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
+
+// const getBreadcrumb = CATEGORIES.find(
+//   (CATEGORY) => CATEGORY.value === category
+// );
 
 const resourcesFilteredByPrices = (resources, prices) => {
   const pricesName = prices.map((price) => price.name);
@@ -25,8 +29,8 @@ const resourcesFilteredByCodingLanguages = (resources, codingLanguages) => {
     (codingLanguage) => codingLanguage.name
   );
   return resources.filter((resource) => {
-    const tagsName = get(resource, 'tagsName', []);
-    if (tagsName.some((tag) => codingLanguagesName.includes(tag.name))) {
+    const tagsName = get(resource, 'tags', []);
+    if (tagsName.some((tag) => codingLanguagesName.includes(tag))) {
       return resource;
     }
   });
@@ -79,20 +83,18 @@ const getLocales = (resources) => {
   return locales;
 };
 
-const getCodingLanguagesFiltered = (resources) => {
-  return resources
-    .map((resource) => {
-      return get(resource, 'tagsName', []).map((tag) => tag.name);
-    })
-    .flat()
-    .filter((value, index, self) => self.indexOf(value) === index);
-};
-
 const getCodingLanguages = (resources) => {
-  const codingLanguagesFiltered = getCodingLanguagesFiltered(resources);
-  return CODING_LANGUAGES.filter((CODING_LANGUAGE) =>
-    codingLanguagesFiltered.includes(CODING_LANGUAGE.name)
+  const codingLanguages = CODING_LANGUAGES.filter(
+    (CODING_LANGUAGE) =>
+      !isEmpty(
+        resources.find((resource) =>
+          get(resource, 'tags', []).filter(
+            (tag) => tag.id === CODING_LANGUAGE.id
+          )
+        )
+      )
   );
+  return codingLanguages;
 };
 
 const resetFilters = (setPrices, setLocales, setCodingLanguages) => {

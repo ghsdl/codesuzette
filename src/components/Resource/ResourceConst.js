@@ -4,4 +4,12 @@ const RESOURSE_PRICE_CONST = [
   { value: 'premium', label: 'Payant' }
 ];
 
-export { RESOURSE_PRICE_CONST };
+const RESOURSE_TAG_CONST = [
+  { value: 1, label: 'html' },
+  { value: 2, label: 'css' },
+  { value: 3, label: 'javascript' },
+  { value: 4, label: 'react' },
+  { value: 5, label: 'typescript' }
+];
+
+export { RESOURSE_PRICE_CONST, RESOURSE_TAG_CONST };

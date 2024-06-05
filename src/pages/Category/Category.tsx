@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { getResourcesByCategory } from '../Utils';
 import { CATEGORIES } from './CategoryConst';
 import {
   getResourcesFiltered,
@@ -19,10 +18,6 @@ import get from 'lodash/get';
 import size from 'lodash/size';
 import './Category.scss';
 
-interface CategoryPageProps {
-  category: string;
-}
-
 interface Resource {
   id: number;
   name: string;
@@ -31,30 +26,23 @@ interface Resource {
   image: string;
   locale: string;
   price: string;
-  categories: number;
-  tagsName: [];
+  categories: string;
+  tags: string[];
 }
 
 type Resources = Resource[];
 
-const CategoryPage = ({ category }: CategoryPageProps) => {
-  const [loading, setLoading] = useState<boolean | null>(null);
-  const [resources, setResources] = useState<Resources>([]);
+interface ResourcesProps {
+  resources: Resource[];
+}
+
+const CategoryPage = ({ resources }: ResourcesProps) => {
   const [resourcesFiltered, setResourcesFiltered] = useState<Resources>([]);
   const [prices, setPrices] = useState<{ name: string; label: string }[]>([]);
   const [locales, setLocales] = useState<{ name: string; label: string }[]>([]);
   const [codingLanguages, setCodingLanguages] = useState<
     { name: string; label: string }[]
   >([]);
-
-  const resourceCategory = CATEGORIES.find(
-    (CATEGORY) => CATEGORY.value === category
-  );
-
-  useEffect(() => {
-    getResourcesByCategory(setResources, setLoading, category);
-    resetFilters(setPrices, setLocales, setCodingLanguages);
-  }, [resourceCategory]);
 
   useEffect(() => {
     getResourcesFiltered(
@@ -69,14 +57,14 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
   return (
     <Layout>
       <div className="categoryPage">
-        <Breadcrumb category={resourceCategory} />
-        {isEmpty(resources) && !loading && (
+        {/* <Breadcrumb category={resourceCategory} />
+        {isEmpty(resources) && (
           <Paragraph className="categoryPage__paragraph">{`Aucune ressource dans la catégorie ${get(
             resourceCategory,
             'label',
             ''
           )}.`}</Paragraph>
-        )}
+        )} */}
         <div className="categoryPage__container">
           {!isEmpty(resources) && size(resources) > 1 && (
             <div
@@ -110,9 +98,9 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
             }
           >
             {!isEmpty(resourcesFiltered) && (
-              <Resources resources={resourcesFiltered} loading={loading} />
+              <Resources resources={resourcesFiltered} />
             )}
-            {!isEmpty(resources) && isEmpty(resourcesFiltered) && !loading && (
+            {!isEmpty(resources) && isEmpty(resourcesFiltered) && (
               <div className="categoryPage__container--right__noResource">
                 <NoResource />
               </div>

@@ -4,6 +4,7 @@ import Loader from '../Loader/Loader';
 import size from 'lodash/size';
 import isEmpty from 'lodash/isEmpty';
 import { getLabel, getAnimatedIcon } from './CategoriesUtils';
+import { getResourcesByCategory } from '../../Utils';
 import './Categories.scss';
 
 interface Category {
@@ -14,31 +15,19 @@ interface Category {
 
 interface CategoriesProps {
   categories: Category[];
-  loadingResources: boolean | null;
-  loadingCategories: boolean | null;
-  loadingTags: boolean | null;
   className?: string;
 }
 
-const Categories = ({
-  categories,
-  loadingResources,
-  loadingCategories,
-  loadingTags,
-  className
-}: CategoriesProps) => {
+const Categories = ({ categories, className }: CategoriesProps) => {
   const navigate = useNavigate();
   return (
     <div className={`categories ${className}`}>
-      {!loadingResources &&
-      !loadingCategories &&
-      !loadingTags &&
-      !isEmpty(categories)
+      {!isEmpty(categories)
         ? categories.map((category, index) => (
             <Category
               key={index}
               label={getLabel(category)}
-              ressourcesNumber={size(category.resources)}
+              ressourcesNumber={size(getResourcesByCategory(category.name))}
               animationData={getAnimatedIcon(category)}
               onClick={() => navigate(`/${category.name}`)}
             />
