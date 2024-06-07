@@ -2,8 +2,8 @@ import './Resource.scss';
 import { getPriceLabel, getCodingLanguages } from './ResourceUtils';
 import Picture from '../Picture/Picture';
 import Paragraph from '../Paragraph/Paragraph';
-import englishFlag from '../../assets/images/english.png';
-import frenchFlag from '../../assets/images/french.png';
+import bus from '../../assets/images/bus.png';
+import baguette from '../../assets/images/baguette.png';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 
@@ -23,45 +23,37 @@ interface ResourceProps {
 
 const Resource = ({ resource }: ResourceProps) => {
   return (
-    <a
-      href={resource.url}
-      target="_blank"
-      rel="noreferrer"
-      className="resource"
-    >
-      <header className="resource__header">
-        <Picture
-          className="resource__header__picture"
-          src={`${resource.image}`}
-          alt="resource screenshot"
-        />
-      </header>
-      <div className="resource__content">
-        <div className="resource__content__titleContainer">
-          <Paragraph className="resource__content__title">
-            {resource.name}
+    <div className="resource">
+      <a
+        href={resource.url}
+        target="_blank"
+        rel="noreferrer"
+        className="resource__link"
+      >
+        <div className="resource__bg"></div>
+        <header className="resource__header">
+          <Paragraph className="resource__title">{resource.name}</Paragraph>
+        </header>
+        <div className="resource__subtitle">
+          <Paragraph className="resource__price">
+            {getPriceLabel(resource)}
           </Paragraph>
           <Picture
-            src={
-              isEqual(get(resource, 'locale', ''), 'en_EN')
-                ? englishFlag
-                : frenchFlag
-            }
-            alt="country flag"
-            className="resource__content__locale"
+            src={isEqual(get(resource, 'locale', ''), 'en_EN') ? bus : baguette}
+            alt="country emoji"
+            className="resource__locale"
           />
         </div>
-        <Paragraph className="resource__content__price">
-          {getPriceLabel(resource)}
-        </Paragraph>
-        <Paragraph className="resource__content__description">
-          {resource.description}
-        </Paragraph>
-      </div>
-      <footer className="resource__footer">
-        {getCodingLanguages(resource)}
-      </footer>
-    </a>
+        <div className="resource__content">
+          <Paragraph className="resource__description">
+            {resource.description}
+          </Paragraph>
+        </div>
+        <footer className="resource__footer">
+          {getCodingLanguages(resource)}
+        </footer>
+      </a>
+    </div>
   );
 };
 

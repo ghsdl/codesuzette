@@ -2,92 +2,133 @@
 @import '../../styles/responsive.scss';
 
 .resource {
+  margin: 0 15px 30px 15px;
+  overflow: hidden;
+  border-radius: 1.8rem;
+  cursor: pointer;
+}
+
+.resource:hover .resource__bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(15);
+}
+
+.resource__link {
+  gap: 0.5rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: $box-shadow-card;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: $box-shadow-card-hover;
-    .resource__content__title {
-      color: $light-purple;
-    }
+  justify-content: space-around;
+  background-color: $purple;
+  overflow: hidden;
+  position: relative;
+  padding: 1.4rem 1.4rem 0 1.4rem;
+}
+
+.resource__link:hover,
+.resource__link:hover
+  .resource__title
+  .resource__content__price
+  .resource__content__description {
+  text-decoration: none;
+  color: $white;
+}
+
+.resource__bg {
+  height: 128px;
+  width: 128px;
+  background-color: $orange;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.resource:nth-child(2n) .resource__bg {
+  background-color: $green;
+}
+.resource:nth-child(3n) .resource__bg {
+  background-color: $yellow;
+}
+.resource:nth-child(4n) .resource__bg {
+  background-color: $light-purple;
+}
+.resource:nth-child(5n) .resource__bg {
+  background-color: $light-red;
+}
+.resource:nth-child(6n) .resource__bg {
+  background-color: $light-blue;
+}
+
+.resource__header {
+  color: $white;
+  z-index: 2;
+}
+
+.resource__title {
+  z-index: 2;
+  color: $white;
+  font-size: 2rem;
+  font-weight: $bold;
+  text-transform: capitalize;
+  @include xl {
+    font-size: 1.3rem;
   }
-  @include sm {
-    width: 300px;
+}
+
+.resource__subtitle {
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+  color: $white;
+}
+
+.resource__locale {
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+}
+
+.resource__price {
+  z-index: 2;
+  font-weight: $bold;
+  font-size: 0.9rem;
+  color: $white;
+  @include xl {
+    margin: 0.5rem 0 2rem 0;
   }
-  &__header {
-    overflow: hidden;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    position: relative;
-    padding-top: 56.25%;
-    &__picture {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: auto;
-      max-width: 100%;
-      block-size: auto;
-    }
-  }
-  &__content {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 1.5rem 0 1.5rem;
-    height: 240px;
-    &__titleContainer {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    &__title {
-      font-size: 1.4rem;
-      font-weight: $bold;
-      text-transform: capitalize;
-      @include xl {
-        font-size: 1.3rem;
-      }
-    }
-    &__locale {
-      width: 34px;
-      height: 34px;
-    }
-    &__price {
-      font-weight: $bold;
-      width: fit-content;
-      text-decoration: underline wavy $light-purple;
-      font-size: 0.9rem;
-      margin: 0.5rem 0 1.5rem 0;
-      color: $purple;
-      @include xl {
-        margin: 0.5rem 0 2rem 0;
-      }
-    }
-    &__description {
-      line-height: 1.35rem;
-      height: 100px;
-      @include xl {
-        font-size: 0.955rem;
-      }
-    }
-  }
-  &__footer {
-    display: flex;
-    align-items: center;
-    padding: 0 1.5rem 0 1.5rem;
-    gap: 0.6rem;
-    height: 60px;
-    &__icon {
-      width: 28px;
-      height: 28px;
-      @include xl {
-        width: 22px;
-        height: 22px;
-      }
-    }
+}
+
+.resource__content {
+  display: flex;
+  z-index: 2;
+  flex-direction: column;
+}
+
+.resource__description {
+  z-index: 2;
+  color: $white;
+}
+
+.resource__footer {
+  color: $white;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 60px;
+  &__icon {
+    color: $white;
+    z-index: 2;
+    width: 22px;
+    height: 22px;
   }
 }

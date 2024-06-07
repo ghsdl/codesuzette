@@ -1,5 +1,5 @@
 import Picture from '../Picture/Picture';
-import { RESOURSE_PRICE_CONST, RESOURSE_TAG_CONST } from './ResourceConst';
+import { RESOURCE_PRICE_CONST, RESOURCE_TAG_CONST } from './ResourceConst';
 import HTML from '../../assets/icons/html5.svg';
 import CSS from '../../assets/icons/css3.svg';
 import JS from '../../assets/icons/javascript.svg';
@@ -9,15 +9,15 @@ import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 
 const getPriceLabel = (resource) => {
-  return RESOURSE_PRICE_CONST.find((RESOURSE_PRICE) => {
-    return isEqual(RESOURSE_PRICE.value, resource.price);
+  return RESOURCE_PRICE_CONST.find((RESOURCE_PRICE) => {
+    return isEqual(RESOURCE_PRICE.value, resource.price);
   }).label;
 };
 
 const getCodingLanguages = (resource) => {
   const tags = get(resource, 'tags', []).map((tag) => {
-    return RESOURSE_TAG_CONST.find((RESOURSE_TAG) => {
-      return isEqual(RESOURSE_TAG.label, tag);
+    return RESOURCE_TAG_CONST.find((RESOURCE_TAG) => {
+      return isEqual(RESOURCE_TAG.label, tag);
     }).label;
   });
 

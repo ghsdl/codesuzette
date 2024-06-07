@@ -51,12 +51,12 @@ const LOCALES = [
   {
     name: 'fr_FR',
     label: 'Français',
-    icon: '🥖'
+    icon: '🇫🇷'
   },
   {
     name: 'en_EN',
     label: 'Anglais',
-    icon: '🫖'
+    icon: '🇬🇧'
   }
 ];
 
